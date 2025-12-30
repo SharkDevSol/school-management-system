@@ -1,0 +1,131 @@
+.messageForm {
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 12px 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
+}
+
+.error {
+  background: #fee;
+  color: #c00;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.attachmentPreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.attachmentItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f7fa;
+  padding: 6px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+.attachmentIcon {
+  color: #667eea;
+  font-size: 14px;
+}
+
+.attachmentName {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #555;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.removeBtn:hover {
+  color: #c00;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.attachBtn {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #667eea;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.attachBtn:hover:not(:disabled) {
+  background: #f0f2ff;
+}
+
+.attachBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.textInput {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.textInput:focus {
+  border-color: #667eea;
+}
+
+.textInput:disabled {
+  background: #f5f5f5;
+}
+
+.sendBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.sendBtn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

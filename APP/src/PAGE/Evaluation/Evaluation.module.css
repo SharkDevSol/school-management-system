@@ -1,0 +1,760 @@
+/* Evaluation.module.css - Modern Evaluation Design with CSS Variables */
+
+/* Container */
+.evaluationManagerContainer {
+  min-height: 100vh;
+  padding: 24px;
+  background: var(--bg-gradient);
+}
+
+/* Header */
+.evaluationManagerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.evaluationManagerHeader > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.evaluationManagerHeader h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.evaluationManagerHeader p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.evaluationManagerCreateButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px var(--primary-shadow-lg);
+}
+
+.evaluationManagerCreateButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px var(--primary-shadow);
+}
+
+.evaluationManagerCreateButton.closeButton {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  box-shadow: none;
+  border: 2px solid var(--border-color);
+}
+
+.evaluationManagerCreateButton.closeButton:hover {
+  background: var(--error-bg);
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+/* Filters */
+.evaluationManagerFilters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  background: var(--card-bg);
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+.evaluationManagerFilterGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+  background: var(--bg-secondary);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.evaluationManagerFilterGroup input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+.evaluationManagerFilterGroup input::placeholder {
+  color: var(--text-muted);
+}
+
+.evaluationManagerFilters select {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  font-size: 0.95rem;
+  color: var(--text-color);
+  cursor: pointer;
+  min-width: 150px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.evaluationManagerFilters select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Grid */
+.evaluationManagerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.evaluationManagerCard {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.evaluationManagerCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.evaluationManagerCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.evaluationManagerCardHeader h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.evaluationManagerStatusBadge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusactive, .statuscompleted {
+  background: var(--success-bg);
+  color: var(--success-color);
+}
+
+.statuspending {
+  background: var(--warning-bg);
+  color: var(--warning-color);
+}
+
+.statusdraft {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.evaluationManagerCardContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.evaluationManagerCardContent span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.evaluationManagerCardContent span svg {
+  color: var(--primary-color);
+}
+
+.evaluationManagerCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.evaluationManagerCardFooter .date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.evaluationManagerCardActions {
+  display: flex;
+  gap: 8px;
+}
+
+.evaluationManagerCardActions button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.evaluationManagerCardActions button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.evaluationManagerCardActions .deleteButton:hover {
+  background: var(--error-color);
+  color: white;
+}
+
+/* Empty State */
+.evaluationManagerEmpty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.evaluationManagerEmpty svg {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.evaluationManagerEmpty h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+.evaluationManagerEmpty p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Loading */
+.evaluationManagerLoading {
+  text-align: center;
+  padding: 60px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Error Message */
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: var(--error-bg);
+  color: var(--error-color);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Create Evaluation Area (Inline) */
+.createEvaluationArea {
+  margin-bottom: 28px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
+}
+
+.createEvaluationArea form {
+  background: transparent;
+  box-shadow: none;
+  max-width: none;
+  margin: 0;
+}
+
+/* Create Evaluation Form */
+.createEvaluationContainer {
+  min-height: 100vh;
+  padding: 24px;
+  background: var(--bg-gradient);
+}
+
+.createEvaluationContainer form {
+  background: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.formHeader {
+  padding: 28px 32px;
+  background: var(--primary-gradient);
+  color: white;
+}
+
+.formHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 32px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 14px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+/* Columns Section */
+.columnsSection {
+  padding: 0 32px 32px;
+}
+
+.columnsSection h3 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.columnRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.columnRow input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.columnRow input:focus {
+  border-color: var(--primary-color);
+}
+
+.columnRow input[type="number"] {
+  width: 100px;
+  flex: none;
+}
+
+.columnRow button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: var(--error-bg);
+  color: var(--error-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.columnRow button:hover {
+  background: var(--error-border);
+}
+
+.columnRow button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.addColumnButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.addColumnButton:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary-color);
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 24px 32px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.formActions button {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.formActions button[type="button"] {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: none;
+}
+
+.formActions button[type="button"]:hover {
+  background: var(--hover-bg);
+}
+
+.formActions button[type="submit"] {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 16px var(--primary-shadow-lg);
+}
+
+.formActions button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-shadow);
+}
+
+.formActions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .evaluationManagerContainer,
+  .createEvaluationContainer {
+    padding: 16px;
+  }
+  
+  .evaluationManagerHeader {
+    flex-direction: column;
+  }
+  
+  .evaluationManagerFilters {
+    flex-direction: column;
+  }
+  
+  .evaluationManagerGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .columnRow {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Manage Evaluation Areas Section */
+.manageAreasContainer {
+  background: var(--card-bg);
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.manageAreasHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.manageAreasHeader:hover {
+  background: var(--hover-bg);
+}
+
+.manageAreasTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.manageAreasTitle svg {
+  color: var(--primary-color);
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.expandButton:hover {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+.manageAreasContent {
+  padding: 20px 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.createAreaForm {
+  margin-bottom: 24px;
+}
+
+.createAreaForm h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 12px;
+}
+
+.createAreaInputs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.createAreaInputs input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.createAreaInputs input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.createAreaInputs button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.createAreaInputs button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--primary-shadow);
+}
+
+.createAreaInputs button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.existingAreasList {
+  margin-top: 20px;
+}
+
+.existingAreasList h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 12px;
+}
+
+.noAreasText {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.areasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.areaItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.areaItem:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.areaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.areaName {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.areaDescription {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.deleteAreaButton {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.deleteAreaButton:hover {
+  background: var(--error-bg);
+  color: var(--error-color);
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--success-bg);
+  color: var(--success-color);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Responsive for Manage Areas */
+@media (max-width: 768px) {
+  .createAreaInputs {
+    flex-direction: column;
+  }
+  
+  .createAreaInputs input {
+    min-width: 100%;
+  }
+  
+  .areasGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,196 @@
+.container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 4px 0;
+  font-size: 1.5rem;
+  color: var(--text-primary, #1a1a2e);
+}
+
+.header p {
+  margin: 0;
+  color: var(--text-secondary, #666);
+}
+
+.pendingBadge {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.loading, .error, .empty {
+  text-align: center;
+  padding: 48px;
+  color: var(--text-secondary, #666);
+}
+
+.error {
+  color: #dc2626;
+}
+
+.empty svg {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary, #1a1a2e);
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: white;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.filterBar svg {
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.filterBar select {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+.evaluationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evaluationCard {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border, #e5e7eb);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.evaluationCard:hover {
+  border-color: var(--primary, #4f46e5);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.studentInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text-primary, #1a1a2e);
+}
+
+.studentInfo svg {
+  color: var(--primary, #4f46e5);
+}
+
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusBadge.pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.statusBadge.responded, .statusBadge.completed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+}
+
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.feedbackPreview {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+}
+
+.feedbackPreview svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.actionHint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: var(--primary-light, #eef2ff);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--primary, #4f46e5);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

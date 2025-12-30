@@ -1,0 +1,435 @@
+/* Staff.module.css */
+
+/* Base Styles */
+.staffContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  position: relative;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 280px;
+  background-color: #ffffff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eaeaea;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+}
+
+.logoContainer {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 0.25rem;
+}
+
+.logoSubtext {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 107, 53, 0.08);
+  color: #333;
+}
+
+.navLink.active {
+  background-color: rgba(255, 107, 53, 0.15);
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+.navIcon {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.navText {
+  font-size: 1rem;
+}
+
+.logoutContainer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #ff6b35;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  width: 100%;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoutButton:hover {
+  background-color: rgba(255, 107, 53, 0.08);
+}
+
+.logoutIcon {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  flex: 1;
+  margin-left: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile Header */
+.mobileHeader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 90;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.mobileHeader.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobileHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  height: 60px;
+}
+
+.mobileMenuButton {
+  background: none;
+  border: none;
+  color: #ff6b35;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileLogo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.mobileActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.mobileActionButton {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.mobileActionButton:hover {
+  color: #ff6b35;
+}
+
+/* Mobile Bottom Navigation */
+.mobileBottomNav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 90;
+  padding: 0.75rem 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #f0f0f0;
+}
+
+.mobileBottomNavLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+  flex: 1;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+}
+
+.mobileBottomNavLink.active {
+  color: #ff6b35;
+}
+
+.mobileBottomNavIcon {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Mobile Menu Overlay */
+.mobileMenuOverlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 95;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobileMenuLogo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.mobileMenuCloseButton {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobileNav {
+  flex: 1;
+}
+
+.mobileNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+}
+
+.mobileNavLink:hover {
+  background-color: rgba(255, 107, 53, 0.08);
+  color: #333;
+}
+
+.mobileNavLink.active {
+  background-color: rgba(255, 107, 53, 0.15);
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+.mobileNavIcon {
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.mobileNavText {
+  font-size: 1.1rem;
+}
+
+.mobileLogout {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mobileLogoutButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #ff6b35;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  width: 100%;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileLogoutButton:hover {
+  background-color: rgba(255, 107, 53, 0.08);
+}
+
+.mobileLogoutIcon {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #f8f9fa;
+}
+
+/* Floating Action Button */
+.floatingActionButton {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #ff6b35;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  z-index: 80;
+  font-size: 1.3rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .contentWrapper {
+    margin-left: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .contentWrapper {
+    margin-left: 0;
+  }
+  
+  .mobileHeader {
+    display: block;
+  }
+  
+  .mobileBottomNav {
+    display: flex;
+  }
+  
+  .mainContent {
+    padding: 1.5rem;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1rem;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  
+  .mobileHeaderContent {
+    padding: 1rem;
+    height: 56px;
+  }
+  
+  .mobileMenuOverlay {
+    padding: 1rem;
+  }
+  
+  .floatingActionButton {
+    bottom: 80px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}

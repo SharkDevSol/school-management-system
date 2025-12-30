@@ -1,0 +1,345 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  color: #e67e22;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Send Report Section */
+.sendReport {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sendReport h2 {
+  color: #e67e22;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #e67e22;
+  box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+.formRow {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.formRow .formGroup {
+  flex: 1;
+}
+
+.submitButton {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem auto 0;
+}
+
+.submitButton:hover {
+  background-color: #d35400;
+}
+
+.submitButton.low {
+  background-color: #2ecc71;
+}
+
+.submitButton.medium {
+  background-color: #f39c12;
+}
+
+.submitButton.high {
+  background-color: #e74c3c;
+}
+
+/* Report History Section */
+.reportHistory {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.reportHistory h2 {
+  color: #e67e22;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.historyHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.searchBox {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchBox svg {
+  position: absolute;
+  left: 1rem;
+  color: #777;
+}
+
+.searchBox input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.searchBox input:focus {
+  outline: none;
+  border-color: #e67e22;
+}
+
+.filterSelect {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  min-width: 150px;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #e67e22;
+}
+
+.exportButton {
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.exportButton:hover {
+  background-color: #eee;
+}
+
+/* Table Styles */
+.responsiveTable {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #555;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Priority Badges */
+.priorityBadge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.priorityBadge.low {
+  background-color: #e8f8f5;
+  color: #27ae60;
+}
+
+.priorityBadge.medium {
+  background-color: #fef9e7;
+  color: #f39c12;
+}
+
+.priorityBadge.high {
+  background-color: #fdedec;
+  color: #e74c3c;
+}
+
+/* Status Styles */
+.statusCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seen {
+  color: #2ecc71;
+}
+
+.pending {
+  color: #f39c12;
+}
+
+.resolved {
+  color: #3498db;
+}
+
+.rejected {
+  color: #e74c3c;
+}
+
+/* View Button */
+.viewButton {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s;
+}
+
+.viewButton:hover {
+  background-color: #d35400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .formRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .submitButton {
+    max-width: 100%;
+  }
+  
+  .historyHeader {
+    flex-direction: column;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  th, td {
+    padding: 0.8rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sendReport,
+  .reportHistory {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .sendReport h2,
+  .reportHistory h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,5686 @@
+/* Staff Profile - Modern Mobile-first styles */
+
+/* Fields Stack */
+.fieldsStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.fieldItem:last-child {
+  border-bottom: none;
+}
+
+.fieldItem:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.fieldValue {
+  font-size: 1.05rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Tab Title */
+.tabTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 16px 20px 8px;
+}
+
+/* Evaluations */
+.evaluationsContainer {
+  padding-bottom: 20px;
+}
+
+.evaluationsList {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 380px) {
+  .evaluationsList {
+    padding: 0 8px;
+    gap: 8px;
+  }
+}
+
+.evaluationCard {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 380px) {
+  .evaluationCard {
+    padding: 12px;
+    border-radius: 12px;
+  }
+}
+
+.evaluationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+@media (max-width: 380px) {
+  .evaluationHeader {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+.evaluationName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  line-height: 1.3;
+}
+
+@media (max-width: 380px) {
+  .evaluationName {
+    font-size: 0.9rem;
+  }
+}
+
+.statusBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.statusCompleted {
+  background: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+}
+
+.statusPending {
+  background: rgba(241, 196, 15, 0.1);
+  color: #f39c12;
+}
+
+.statusInProgress {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.statusDefault {
+  background: #f5f5f5;
+  color: #888;
+}
+
+.evaluationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 380px) {
+  .evaluationDetails {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+}
+
+.evaluationDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailLabel {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.detailValue {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.evaluationActions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 380px) {
+  .evaluationActions {
+    gap: 6px;
+  }
+}
+
+.actionButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 40px;
+}
+
+.actionButton:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 380px) {
+  .actionButton {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+  
+  .actionButton svg {
+    font-size: 0.85rem;
+  }
+}
+
+/* Posts Container */
+.postsContainer {
+  padding-bottom: 20px;
+}
+
+/* Social Media Feed Container */
+.feedContainer {
+  background: #fafafa;
+  min-height: 100%;
+}
+
+.postsFeed {
+  padding-top: 8px;
+}
+
+/* Empty Feed State - Social Media Style */
+.emptyFeed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.emptyFeedIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #262626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.emptyFeedIcon svg {
+  font-size: 2.5rem;
+  color: #262626;
+}
+
+.emptyFeed h3 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #262626;
+  margin: 0 0 8px;
+}
+
+.emptyFeed p {
+  font-size: 0.9rem;
+  color: #8e8e8e;
+  margin: 0;
+  max-width: 280px;
+}
+
+/* Dark mode for feed */
+:global(.darkMode) .feedContainer,
+:global(body.dark-mode) .feedContainer {
+  background: #000;
+}
+
+:global(.darkMode) .emptyFeedIcon,
+:global(body.dark-mode) .emptyFeedIcon {
+  border-color: #fafafa;
+}
+
+:global(.darkMode) .emptyFeedIcon svg,
+:global(body.dark-mode) .emptyFeedIcon svg {
+  color: #fafafa;
+}
+
+:global(.darkMode) .emptyFeed h3,
+:global(body.dark-mode) .emptyFeed h3 {
+  color: #fafafa;
+}
+
+:global(.darkMode) .emptyFeed p,
+:global(body.dark-mode) .emptyFeed p {
+  color: #a8a8a8;
+}
+
+/* Communications Container */
+.communicationsContainer {
+  padding: 0;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #999;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyState p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Error Container */
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.errorContainer p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.retryButton {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.retryButton:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .tabTitle {
+    padding: 20px 24px 12px;
+    font-size: 1.2rem;
+  }
+  
+  .fieldItem {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fieldLabel {
+    font-size: 0.85rem;
+  }
+  
+  .fieldValue {
+    text-align: right;
+  }
+  
+  .evaluationsList {
+    padding: 0 20px;
+  }
+  
+  .evaluationCard {
+    padding: 20px;
+  }
+  
+  .evaluationDetails {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .evaluationDetail {
+    flex: 1;
+    min-width: 120px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+/* Hover effects for non-touch devices */
+@media (hover: hover) {
+  .retryButton:hover {
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+  }
+  
+  .actionButton:hover {
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+  }
+  
+  .evaluationCard:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+/* Dark mode support */
+:global(.darkMode) .fieldsStack,
+:global(body.dark-mode) .fieldsStack {
+  color: #e5e7eb;
+}
+
+:global(.darkMode) .fieldLabel,
+:global(body.dark-mode) .fieldLabel {
+  color: #9ca3af;
+}
+
+:global(.darkMode) .fieldValue,
+:global(body.dark-mode) .fieldValue {
+  color: #f3f4f6;
+}
+
+:global(.darkMode) .tabTitle,
+:global(body.dark-mode) .tabTitle {
+  color: #f9fafb;
+}
+
+:global(.darkMode) .evaluationCard,
+:global(body.dark-mode) .evaluationCard {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+:global(.darkMode) .evaluationName,
+:global(body.dark-mode) .evaluationName {
+  color: #f3f4f6;
+}
+
+:global(.darkMode) .detailLabel,
+:global(body.dark-mode) .detailLabel {
+  color: #9ca3af;
+}
+
+:global(.darkMode) .detailValue,
+:global(body.dark-mode) .detailValue {
+  color: #e5e7eb;
+}
+
+:global(.darkMode) .emptyState,
+:global(body.dark-mode) .emptyState {
+  color: #9ca3af;
+}
+
+:global(.darkMode) .errorContainer p,
+:global(body.dark-mode) .errorContainer p {
+  color: #d1d5db;
+}
+
+:global(.darkMode) .actionButton,
+:global(body.dark-mode) .actionButton {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+:global(.darkMode) .statusBadge,
+:global(body.dark-mode) .statusBadge {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ==================== ATTENDANCE TAB STYLES ==================== */
+
+.attendanceContainer {
+  padding-bottom: 100px;
+}
+
+.attendanceHeader {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.attendanceHeader .tabTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.assignedClassBadge {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.attendanceControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dateSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  color: #6b7280;
+}
+
+.dateSelector input {
+  border: none;
+  font-size: 0.9rem;
+  color: #374151;
+  background: transparent;
+  outline: none;
+}
+
+.quickActions {
+  display: flex;
+  gap: 8px;
+}
+
+.quickPresentBtn,
+.quickAbsentBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quickPresentBtn {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.quickPresentBtn:active {
+  background: #a7f3d0;
+}
+
+.quickAbsentBtn {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.quickAbsentBtn:active {
+  background: #fecaca;
+}
+
+.attendanceStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.statItem svg {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.statItem span {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.statItem small {
+  font-size: 0.65rem;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.statTotal { border-top: 3px solid #6366f1; }
+.statTotal svg, .statTotal span { color: #6366f1; }
+
+.statPresent { border-top: 3px solid #10b981; }
+.statPresent svg, .statPresent span { color: #10b981; }
+
+.statAbsent { border-top: 3px solid #ef4444; }
+.statAbsent svg, .statAbsent span { color: #ef4444; }
+
+.statLate { border-top: 3px solid #f59e0b; }
+.statLate svg, .statLate span { color: #f59e0b; }
+
+.studentAttendanceList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.studentAttendanceCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.studentAttendanceInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.studentNumber {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.studentAttendanceAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.studentAttendanceAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.studentAttendanceDetails {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.studentAttendanceName {
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studentAttendanceId {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.attendanceButtons {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.attBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.attPresent:hover,
+.attPresent.attActive {
+  background: #d1fae5;
+  color: #065f46;
+  border-color: #10b981;
+}
+
+.attAbsent:hover,
+.attAbsent.attActive {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #ef4444;
+}
+
+.attLate:hover,
+.attLate.attActive {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #f59e0b;
+}
+
+.saveAttendanceSection {
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.saveAttendanceBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.saveAttendanceBtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.saveAttendanceBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Dark mode for attendance */
+:global(.darkMode) .attendanceContainer {
+  background: #0f172a;
+}
+
+:global(.darkMode) .assignedClassBadge {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+:global(.darkMode) .dateSelector {
+  background: #1e293b;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .dateSelector input {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .statItem {
+  background: #1e293b;
+}
+
+:global(.darkMode) .statItem small {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .studentAttendanceCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .studentNumber {
+  background: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .studentAttendanceAvatar {
+  background: #334155;
+  color: #64748b;
+}
+
+:global(.darkMode) .studentAttendanceName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .studentAttendanceId {
+  color: #64748b;
+}
+
+:global(.darkMode) .attBtn {
+  background: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .saveAttendanceSection {
+  background: #1e293b;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .attendanceStats {
+    max-width: 500px;
+  }
+  
+  .studentAttendanceList {
+    max-width: 600px;
+  }
+  
+  .saveAttendanceSection {
+    max-width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ==================== WEEKLY ATTENDANCE STYLES ==================== */
+
+.weekSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  color: #6b7280;
+  flex: 1;
+}
+
+.weekSelector select {
+  border: none;
+  font-size: 0.9rem;
+  color: #374151;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  cursor: pointer;
+}
+
+.noWeeksText {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.createWeekBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.createWeekBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dayTabs {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.dayTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.dayTab {
+  flex: 1;
+  min-width: 52px;
+  padding: 14px 10px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.dayTab:active {
+  transform: scale(0.95);
+}
+
+.dayTabActive {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+.quickActionsRow {
+  display: flex;
+  gap: 12px;
+  padding: 0 16px 16px;
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .dayTabs {
+    gap: 6px;
+    padding: 0 12px 12px;
+  }
+  
+  .dayTab {
+    min-width: 46px;
+    padding: 12px 8px;
+    font-size: 0.8rem;
+    border-radius: 12px;
+  }
+  
+  .quickActionsRow {
+    gap: 10px;
+    padding: 0 12px 12px;
+  }
+}
+
+.quickActionsRow button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quickLateBtn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.quickLateBtn:active {
+  background: #fde68a;
+}
+
+.quickPermissionBtn {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.quickPermissionBtn:active {
+  background: #c7d2fe;
+}
+
+.attPermission:hover,
+.attPermission.attActive {
+  background: #e0e7ff;
+  color: #4338ca;
+  border-color: #6366f1;
+}
+
+.statPermission {
+  border-top: 3px solid #6366f1;
+}
+
+.statPermission svg,
+.statPermission span:first-of-type {
+  color: #6366f1;
+}
+
+/* Update stats grid for 5 items */
+.attendanceStats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  padding: 0 16px 16px;
+}
+
+@media (max-width: 400px) {
+  .attendanceStats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .dayTabs {
+    gap: 2px;
+  }
+  
+  .dayTab {
+    padding: 8px 4px;
+    font-size: 0.7rem;
+  }
+}
+
+:global(.darkMode) .weekSelector {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.darkMode) .weekSelector select {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .dayTab {
+  background: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .dayTabActive {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+}
+
+:global(.darkMode) .quickLateBtn {
+  background: #78350f;
+  color: #fef3c7;
+}
+
+:global(.darkMode) .quickPermissionBtn {
+  background: #312e81;
+  color: #e0e7ff;
+}
+
+
+/* ==================== NEW WEEK CREATION STYLES ==================== */
+
+.quickCreateRow {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 16px;
+}
+
+.quickCreateBtn,
+.quickCreateBtnAlt {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quickCreateBtn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.quickCreateBtnAlt {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.quickCreateBtn:active,
+.quickCreateBtnAlt:active {
+  transform: scale(0.97);
+}
+
+.quickCreateBtn:disabled,
+.quickCreateBtnAlt:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 400px) {
+  .quickCreateRow {
+    gap: 8px;
+    padding: 0 12px 12px;
+  }
+  
+  .quickCreateBtn,
+  .quickCreateBtnAlt {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+}
+
+/* Modal Styles - Mobile First */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  padding: 8px 16px 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 4px;
+  background: #d1d5db;
+  border-radius: 2px;
+  margin: 0 auto 12px;
+}
+
+.modal h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+}
+
+.modal p {
+  margin: 0 0 16px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.modalLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 14px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  background: #f9fafb;
+  color: #1f2937;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: #10b981;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.modalButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalCancelBtn,
+.modalCreateBtn {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalCreateBtn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.35);
+  order: -1;
+}
+
+.modalCreateBtn:active {
+  transform: scale(0.98);
+}
+
+.modalCreateBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.modalCancelBtn {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.modalCancelBtn:active {
+  background: #e5e7eb;
+}
+
+/* Dark mode for modal */
+:global(.darkMode) .modal {
+  background: #1e293b;
+}
+
+:global(.darkMode) .modal h3 {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .modal p {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .modalInput {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .modalCancelBtn {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+
+/* ==================== IMPROVED ATTENDANCE DESIGN ==================== */
+
+.attHeader {
+  padding: 16px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 0 0 24px 24px;
+  margin: 0 0 16px;
+  color: white;
+}
+
+.attHeaderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.attHeaderTop h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.attHeaderTop h2 svg {
+  font-size: 1.2rem;
+}
+
+.classBadge {
+  background: rgba(255,255,255,0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modeToggle {
+  display: flex;
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.modeBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modeBtn svg {
+  font-size: 1rem;
+}
+
+.modeBtnActive {
+  background: white;
+  color: #059669;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 400px) {
+  .attHeader {
+    padding: 14px 12px;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 12px;
+  }
+  
+  .attHeaderTop h2 {
+    font-size: 1rem;
+    gap: 6px;
+  }
+  
+  .classBadge {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .modeBtn {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    gap: 5px;
+  }
+}
+
+.weekRow {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 14px;
+  align-items: center;
+}
+
+.weekSelect {
+  flex: 1;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  min-width: 0;
+}
+
+.weekSelect:focus {
+  border-color: #10b981;
+  outline: none;
+}
+
+.newWeekBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.newWeekBtn:active {
+  transform: scale(0.97);
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 0 16px 16px;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 8px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.statBox small {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+@media (max-width: 400px) {
+  .weekRow {
+    gap: 8px;
+    padding: 0 12px 12px;
+  }
+  
+  .weekSelect {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+  
+  .newWeekBtn {
+    padding: 12px 14px;
+    font-size: 0.8rem;
+    border-radius: 12px;
+  }
+  
+  .statsRow {
+    gap: 6px;
+    padding: 0 12px 12px;
+  }
+  
+  .statBox {
+    padding: 10px 6px;
+    border-radius: 12px;
+  }
+  
+  .statBox small {
+    font-size: 0.55rem;
+  }
+}
+
+.statNumP { font-size: 1.4rem; font-weight: 700; color: #10b981; }
+.statNumA { font-size: 1.4rem; font-weight: 700; color: #ef4444; }
+.statNumL { font-size: 1.4rem; font-weight: 700; color: #f59e0b; }
+.statNumE { font-size: 1.4rem; font-weight: 700; color: #6366f1; }
+
+@media (max-width: 400px) {
+  .statNumP, .statNumA, .statNumL, .statNumE {
+    font-size: 1.2rem;
+  }
+}
+
+.studentList {
+  padding: 0 16px;
+  padding-bottom: 120px;
+}
+
+.studentRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: white;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  gap: 12px;
+}
+
+.studentRow:active {
+  background: #f9fafb;
+  transform: scale(0.99);
+}
+
+.studentInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sNum {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.sName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.markBtns {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mBtn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: #f3f4f6;
+  color: #9ca3af;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mBtn:active {
+  transform: scale(0.92);
+}
+
+@media (max-width: 400px) {
+  .studentList {
+    padding: 0 12px;
+    padding-bottom: 110px;
+  }
+  
+  .studentRow {
+    padding: 12px 14px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    gap: 10px;
+  }
+  
+  .studentInfo {
+    gap: 10px;
+  }
+  
+  .sNum {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+  }
+  
+  .sName {
+    font-size: 0.9rem;
+  }
+  
+  .markBtns {
+    gap: 6px;
+  }
+  
+  .mBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sName {
+    font-size: 0.85rem;
+    max-width: 100px;
+  }
+  
+  .mBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+}
+
+.mBtnP.mBtnActive { background: #d1fae5; color: #065f46; border-color: #10b981; }
+.mBtnA.mBtnActive { background: #fee2e2; color: #991b1b; border-color: #ef4444; }
+.mBtnL.mBtnActive { background: #fef3c7; color: #92400e; border-color: #f59e0b; }
+.mBtnE.mBtnActive { background: #e0e7ff; color: #4338ca; border-color: #6366f1; }
+
+.qaBtnP, .qaBtnA, .qaBtnL, .qaBtnE {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.qaBtnP:active, .qaBtnA:active, .qaBtnL:active, .qaBtnE:active {
+  transform: scale(0.92);
+}
+
+.qaBtnP { background: #d1fae5; color: #065f46; }
+.qaBtnA { background: #fee2e2; color: #991b1b; }
+.qaBtnL { background: #fef3c7; color: #92400e; }
+.qaBtnE { background: #e0e7ff; color: #4338ca; }
+
+@media (max-width: 400px) {
+  .qaBtnP, .qaBtnA, .qaBtnL, .qaBtnE {
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+}
+
+.saveSection {
+  position: fixed;
+  bottom: 90px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+  /* background: rgba(248, 250, 252, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  z-index: 90;
+}
+
+.saveBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  -webkit-tap-highlight-color: transparent;
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  color: white;
+  box-shadow: 
+    0 8px 24px rgba(16, 185, 129, 0.4),
+    0 4px 8px rgba(16, 185, 129, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  min-width: 200px;
+  margin-bottom:20px;
+}
+
+.saveBtn:active {
+  transform: scale(0.95);
+}
+
+.saveBtn:hover {
+  box-shadow: 
+    0 12px 32px rgba(16, 185, 129, 0.5),
+    0 6px 12px rgba(16, 185, 129, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+}
+
+.saveBtn svg {
+  font-size: 1.1rem;
+}
+
+/* Safe area for notched devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .saveSection {
+    bottom: calc(90px + env(safe-area-inset-bottom));
+  }
+}
+
+:global(.darkMode) .saveSection {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+/* ==================== REPORT VIEW STYLES ==================== */
+
+.reportHeader {
+  padding: 0 16px 12px;
+}
+
+.reportHeader h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.reportTable {
+  margin: 0 16px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.reportHeaderRow {
+  display: flex;
+  background: #f9fafb;
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.reportRow {
+  display: flex;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: center;
+}
+
+.reportRow:last-child {
+  border-bottom: none;
+}
+
+.reportColName {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #1f2937;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reportNum {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.reportColDay {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.reportColRate {
+  width: 45px;
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.rateGood { color: #10b981; }
+.rateWarn { color: #f59e0b; }
+.rateBad { color: #ef4444; }
+
+.statusIconP { color: #10b981; font-weight: bold; }
+.statusIconA { color: #ef4444; font-weight: bold; }
+.statusIconL { color: #f59e0b; font-weight: bold; }
+.statusIconE { color: #6366f1; font-weight: bold; }
+.statusIconEmpty { color: #d1d5db; }
+
+.reportSummary {
+  margin: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.reportSummary h4 {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.summaryItem {
+  text-align: center;
+}
+
+.summaryLabel {
+  display: block;
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.summaryValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Dark mode */
+:global(.darkMode) .attHeader {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+:global(.darkMode) .weekSelect {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .statBox {
+  background: #1e293b;
+}
+
+:global(.darkMode) .studentRow {
+  background: #1e293b;
+}
+
+:global(.darkMode) .sName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .reportTable {
+  background: #1e293b;
+}
+
+:global(.darkMode) .reportHeaderRow {
+  background: #0f172a;
+}
+
+:global(.darkMode) .reportRow {
+  border-color: #334155;
+}
+
+:global(.darkMode) .reportColName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .reportSummary {
+  background: #1e293b;
+}
+
+:global(.darkMode) .reportSummary h4 {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .summaryValue {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .saveSection {
+  background: #1e293b;
+}
+
+@media (max-width: 400px) {
+  .reportColName {
+    flex: 1.5;
+  }
+  
+  .mBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+}
+
+
+/* ==================== SCHEDULE TAB STYLES ==================== */
+
+.scheduleContainer {
+  padding-bottom: 100px;
+}
+
+.scheduleList {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scheduleDayCard {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.scheduleDayHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.scheduleDayHeader svg {
+  font-size: 1.1rem;
+}
+
+.schedulePeriods {
+  padding: 8px;
+}
+
+.schedulePeriodItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  background: #f9fafb;
+  transition: background 0.2s ease;
+}
+
+.schedulePeriodItem:last-child {
+  margin-bottom: 0;
+}
+
+.schedulePeriodItem:active {
+  background: #f3f4f6;
+}
+
+.periodNumber {
+  min-width: 70px;
+  padding: 6px 10px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.periodDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.periodClass {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.periodSubject {
+  font-size: 0.8rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Dark mode for schedule */
+:global(.darkMode) .scheduleDayCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .scheduleDayHeader {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+:global(.darkMode) .schedulePeriodItem {
+  background: #0f172a;
+}
+
+:global(.darkMode) .schedulePeriodItem:active {
+  background: #1e293b;
+}
+
+:global(.darkMode) .periodClass {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .periodSubject {
+  color: #94a3b8;
+}
+
+@media (min-width: 768px) {
+  .scheduleList {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .schedulePeriodItem {
+    padding: 14px 16px;
+  }
+  
+  .periodNumber {
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .periodClass {
+    font-size: 1rem;
+  }
+  
+  .periodSubject {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==================== TIMETABLE GRID STYLES ==================== */
+
+.scheduleStats {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.scheduleStat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.scheduleStatNum {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.scheduleStat small {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.timetableWrapper {
+  padding: 0 16px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timetableGrid {
+  min-width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.timetableHeader {
+  display: flex;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.timetableCorner {
+  min-width: 50px;
+  padding: 10px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timetablePeriodHeader {
+  flex: 1;
+  min-width: 60px;
+  padding: 10px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timetablePeriodHeader:last-child {
+  border-right: none;
+}
+
+.timetableRow {
+  display: flex;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.timetableRow:last-child {
+  border-bottom: none;
+}
+
+.timetableDayCell {
+  min-width: 50px;
+  padding: 12px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  background: #f9fafb;
+  text-align: center;
+  border-right: 1px solid #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timetableCell {
+  flex: 1;
+  min-width: 60px;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 1px solid #f3f4f6;
+  min-height: 50px;
+}
+
+.timetableCell:last-child {
+  border-right: none;
+}
+
+.timetableCellFilled {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+}
+
+.cellClass {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #059669;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.cellSubject {
+  font-size: 0.6rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-top: 2px;
+}
+
+.cellEmpty {
+  color: #d1d5db;
+  font-size: 0.8rem;
+}
+
+.scheduleDetailTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 16px 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.dayPeriodCount {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* Dark mode for timetable */
+:global(.darkMode) .scheduleStat {
+  background: #1e293b;
+}
+
+:global(.darkMode) .scheduleStatNum {
+  color: #818cf8;
+}
+
+:global(.darkMode) .scheduleStat small {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .timetableGrid {
+  background: #1e293b;
+}
+
+:global(.darkMode) .timetableHeader {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+:global(.darkMode) .timetableRow {
+  border-color: #334155;
+}
+
+:global(.darkMode) .timetableDayCell {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+:global(.darkMode) .timetableCell {
+  border-color: #334155;
+}
+
+:global(.darkMode) .timetableCellFilled {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+}
+
+:global(.darkMode) .cellClass {
+  color: #34d399;
+}
+
+:global(.darkMode) .cellSubject {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .cellEmpty {
+  color: #4b5563;
+}
+
+:global(.darkMode) .scheduleDetailTitle {
+  color: #e2e8f0;
+}
+
+@media (min-width: 768px) {
+  .scheduleStats {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+  
+  .timetableWrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .timetablePeriodHeader {
+    min-width: 80px;
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .timetableDayCell {
+    min-width: 60px;
+    font-size: 0.8rem;
+  }
+  
+  .timetableCell {
+    min-width: 80px;
+    padding: 10px 6px;
+    min-height: 60px;
+  }
+  
+  .cellClass {
+    font-size: 0.75rem;
+  }
+  
+  .cellSubject {
+    font-size: 0.65rem;
+  }
+}
+
+
+/* ==================== SHIFT DISPLAY STYLES ==================== */
+
+.timetableCellShift2 {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%) !important;
+}
+
+.cellShift {
+  font-size: 0.55rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-top: 2px;
+  padding: 1px 4px;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 4px;
+}
+
+.shiftLegend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  margin: 0 16px 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.legendTitle {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.legendItem {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.legendShift1 {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+}
+
+.legendShift2 {
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
+}
+
+.periodShift {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.periodShift1 {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+}
+
+.periodShift2 {
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
+}
+
+/* Dark mode for shift styles */
+:global(.darkMode) .timetableCellShift2 {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%) !important;
+}
+
+:global(.darkMode) .cellShift {
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.25);
+}
+
+:global(.darkMode) .shiftLegend {
+  background: #1e293b;
+}
+
+:global(.darkMode) .legendTitle {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .legendShift1 {
+  background: rgba(16, 185, 129, 0.25);
+  color: #34d399;
+}
+
+:global(.darkMode) .legendShift2 {
+  background: rgba(99, 102, 241, 0.25);
+  color: #818cf8;
+}
+
+:global(.darkMode) .periodShift1 {
+  background: rgba(16, 185, 129, 0.25);
+  color: #34d399;
+}
+
+:global(.darkMode) .periodShift2 {
+  background: rgba(99, 102, 241, 0.25);
+  color: #818cf8;
+}
+
+
+/* ==================== SHIFT SECTION STYLES ==================== */
+
+.shiftSection {
+  margin-bottom: 24px;
+}
+
+.shiftHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  margin: 0 16px 12px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.shiftHeader svg {
+  font-size: 1.1rem;
+}
+
+.shiftHeader1 {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.shiftHeader2 {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.shiftPeriodCount {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.timetableHeader2 {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+}
+
+.timetableCellShift2 {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%) !important;
+}
+
+.scheduleDayHeader2 {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+}
+
+.periodNumber2 {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+}
+
+/* Dark mode for shift sections */
+:global(.darkMode) .shiftHeader1 {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+:global(.darkMode) .shiftHeader2 {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+:global(.darkMode) .timetableHeader2 {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+}
+
+:global(.darkMode) .timetableCellShift2 {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%) !important;
+}
+
+:global(.darkMode) .scheduleDayHeader2 {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+}
+
+:global(.darkMode) .periodNumber2 {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+}
+
+
+/* ==================== INLINE EVALUATION FORM STYLES ==================== */
+
+/* Evaluation Card Status Variants */
+.evaluationCardPending {
+  border-left: 4px solid #f59e0b;
+}
+
+.evaluationCardCompleted {
+  border-left: 4px solid #10b981;
+  opacity: 0.85;
+}
+
+/* Fill Form Button */
+.fillFormBtn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.fillFormBtn:active {
+  transform: scale(0.98);
+}
+
+/* Form Error State */
+.formErrorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.formErrorState p {
+  color: #ef4444;
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+/* Back Button */
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 10px;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.backBtn:active {
+  background: #e5e7eb;
+  transform: scale(0.98);
+}
+
+/* Evaluation Form Header */
+.evalFormHeader {
+  padding: 16px;
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 16px;
+}
+
+.evalFormHeader .backBtn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  margin-bottom: 12px;
+}
+
+.evalFormHeader .backBtn:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.evalFormTitle h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.evalFormMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.evalFormMeta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.evalFormMeta svg {
+  font-size: 0.9rem;
+}
+
+/* Students List */
+.evalFormStudents {
+  padding: 0 16px;
+  padding-bottom: 100px;
+}
+
+.evalStudentCard {
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.evalStudentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #f9fafb;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.evalStudentInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.evalStudentNum {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.evalStudentName {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.evalStudentDetails {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.evalStudentTotal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.evalStudentTotal svg {
+  font-size: 0.9rem;
+}
+
+/* Criteria List */
+.evalCriteriaList {
+  padding: 12px 16px;
+}
+
+.evalAreaSection {
+  margin-bottom: 16px;
+}
+
+.evalAreaSection:last-child {
+  margin-bottom: 0;
+}
+
+.evalAreaName {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.evalCriterionRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: #f9fafb;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.evalCriterionRow:last-child {
+  margin-bottom: 0;
+}
+
+.evalCriterionInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.evalCriterionName {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.evalCriterionMax {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  background: #e5e7eb;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+
+.evalCriterionInputs {
+  display: flex;
+  gap: 8px;
+}
+
+.evalScoreSelect {
+  width: 70px;
+  padding: 8px 10px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.evalScoreSelect:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+.evalNotesInput {
+  flex: 1;
+  padding: 8px 10px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #374151;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.evalNotesInput:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.evalNotesInput::placeholder {
+  color: #9ca3af;
+}
+
+
+
+/* Dark Mode for Evaluation Form */
+:global(.darkMode) .evalFormHeader {
+  background: linear-gradient(135deg, #d35400 0%, #c0392b 100%);
+}
+
+:global(.darkMode) .evalStudentCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalStudentHeader {
+  background: #0f172a;
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .evalStudentName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalStudentDetails {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalAreaName {
+  color: #818cf8;
+}
+
+:global(.darkMode) .evalCriterionRow {
+  background: #0f172a;
+}
+
+:global(.darkMode) .evalCriterionName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalCriterionMax {
+  background: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalScoreSelect {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalNotesInput {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalFormActions {
+  background: #1e293b;
+  border-top-color: #334155;
+}
+
+:global(.darkMode) .backBtn {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .formErrorState p {
+  color: #f87171;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .evalFormStudents {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .evalFormActions {
+    max-width: 700px;
+    left: 500%;
+    transform: translateX(-50%);
+  }
+  
+  .evalCriterionRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .evalCriterionInputs {
+    flex: 0 0 auto;
+    width: 250px;
+  }
+}
+
+@media (max-width: 400px) {
+  .evalScoreSelect {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .evalNotesInput {
+    font-size: 0.8rem;
+  }
+  
+  .evalStudentTotal {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+
+/* ==================== EVALUATION REPORT VIEW STYLES ==================== */
+
+/* View Report Button */
+.viewReportBtn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+}
+
+/* Report Header */
+.evalReportHeader {
+  padding: 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 16px;
+}
+
+.evalReportHeader .backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.evalReportHeader .backBtn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.evalReportHeader .backBtn:active {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0.98);
+}
+
+.evalReportHeader .backBtn svg {
+  font-size: 1rem;
+}
+
+.evalReportTitle h2 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.evalReportSubtitle {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+/* Report Stats */
+.evalReportStats {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.evalReportStat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.evalReportStatNum {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.evalReportStat small {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Report Students */
+.evalReportStudents {
+  padding: 0 16px;
+  padding-bottom: 100px;
+}
+
+.evalReportStudentCard {
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.evalReportStudentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #f9fafb;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.evalReportScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 12px;
+  min-width: 70px;
+}
+
+.evalReportScoreNum {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.evalReportScorePercent {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.scoreGood {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.scoreAvg {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.scoreLow {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Report Criteria */
+.evalReportCriteria {
+  padding: 12px 16px;
+}
+
+.evalReportArea {
+  margin-bottom: 16px;
+}
+
+.evalReportArea:last-child {
+  margin-bottom: 0;
+}
+
+.evalReportAreaName {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.evalReportCriteriaList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evalReportCriterionRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.evalReportCriterionInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.evalReportCriterionName {
+  display: block;
+  font-size: 0.85rem;
+  color: #374151;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.evalReportScoreBar {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.evalReportScoreBarFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.barGood {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.barAvg {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.barLow {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.evalReportCriterionScore {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* Report Notes */
+.evalReportNotes {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.evalReportNote {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.evalReportNote:last-child {
+  margin-bottom: 0;
+}
+
+.evalReportNote strong {
+  color: #374151;
+}
+
+/* Dark Mode for Report */
+:global(.darkMode) .evalReportHeader {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+:global(.darkMode) .evalReportStat {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalReportStatNum {
+  color: #818cf8;
+}
+
+:global(.darkMode) .evalReportStudentCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalReportStudentHeader {
+  background: #0f172a;
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .evalReportAreaName {
+  color: #818cf8;
+}
+
+:global(.darkMode) .evalReportCriterionName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalReportScoreBar {
+  background: #334155;
+}
+
+:global(.darkMode) .evalReportCriterionScore {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalReportNotes {
+  background: #0f172a;
+}
+
+:global(.darkMode) .evalReportNote {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalReportNote strong {
+  color: #e2e8f0;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .evalReportStudents {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .evalReportStats {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-bottom: 16px;
+  }
+}
+
+/* ==================== MARK LIST TAB STYLES ==================== */
+
+.markListContainer {
+  padding-bottom: 100px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.markListFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: white;
+  margin: 0 12px 12px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.markListFilters .filterGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.markListFilters .filterGroup label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.markListFilters .filterGroup select {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  background: #f9fafb;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.markListFilters .filterGroup select:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+}
+
+.markListFilters .filterGroup select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loadMarkListBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.loadMarkListBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.loadMarkListBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Progress Bar */
+.markListProgress {
+  margin: 0 12px 12px;
+  padding: 10px 14px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.progressBarContainer {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Search */
+.markListSearch {
+  margin: 0 12px 12px;
+  position: relative;
+}
+
+.markListSearch .searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.markListSearch input {
+  width: 100%;
+  padding: 10px 10px 10px 38px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.markListSearch input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Student Cards */
+.markListStudents {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.markListStudentCard {
+  background: white;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.studentHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.studentNum {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.studentInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.studentName {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studentMeta {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.studentStatus {
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.statusPass {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.statusFail {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+/* Mark Inputs */
+.markInputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.markInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.markInputGroup label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.markInputGroup input {
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.markInputGroup input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+}
+
+/* Save Button */
+.saveStudentBtn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.saveStudentBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.saveStudentBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Message */
+.markListMessage {
+  margin: 12px;
+  padding: 10px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Dark Mode */
+:global(.darkMode) .markListFilters {
+  background: #1e293b;
+}
+
+:global(.darkMode) .markListFilters .filterGroup label {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .markListFilters .filterGroup select {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .markListProgress {
+  background: #1e293b;
+}
+
+:global(.darkMode) .progressBarContainer {
+  background: #334155;
+}
+
+:global(.darkMode) .markListSearch input {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .markListStudentCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .studentHeader {
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .studentName {
+  color: #f1f5f9;
+}
+
+:global(.darkMode) .markInputGroup label {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .markInputGroup input {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* Small mobile adjustments */
+@media (max-width: 360px) {
+  .markListContainer {
+    max-width: 100%;
+  }
+  
+  .markListFilters {
+    margin: 0 8px 10px;
+    padding: 12px;
+  }
+  
+  .markListProgress {
+    margin: 0 8px 10px;
+  }
+  
+  .markListSearch {
+    margin: 0 8px 10px;
+  }
+  
+  .markListStudents {
+    padding: 0 8px;
+  }
+  
+  .markInputs {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  
+  .markInputGroup input {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+  
+  .studentName {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet and up - still keep mobile-like layout */
+@media (min-width: 768px) {
+  .markListContainer {
+    max-width: 480px;
+  }
+}
+
+/* ============================================
+   EVALUATION BOOK TAB STYLES
+   ============================================ */
+
+.evalBookContainer {
+  padding: 0;
+}
+
+.evalBookList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evalBookItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.evalBookItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.evalBookInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.evalBookIcon {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.evalBookInfo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.evalBookClass {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.evalBookDate {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.evalBookBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.evalBookBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.evalBookBtn:active {
+  transform: scale(0.98);
+}
+
+.evalBookHelp {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evalBookHelp p {
+  margin: 0;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #475569;
+  border-left: 3px solid #6366f1;
+}
+
+/* Empty state for eval book */
+.evalBookContainer .emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.evalBookContainer .emptyIcon {
+  width: 48px;
+  height: 48px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.evalBookContainer .emptyState p {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.evalBookContainer .emptyState small {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .evalBookItem {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .evalBookBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ============================================
+   EVALUATION BOOK FORM STYLES
+   ============================================ */
+
+.evalFormHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.evalBackBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.evalBackBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.evalFormTitle {
+  flex: 1;
+  color: white;
+}
+
+.evalFormTitle h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.evalFormTitle span {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.evalFormError,
+.evalFormSuccess {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.evalFormError {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.evalFormSuccess {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.evalDatePicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.evalDatePicker label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.evalDatePicker input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.evalDatePicker input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.evalStudentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.evalFieldsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.evalFieldItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evalFieldLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.evalFieldLabel .required {
+  color: #dc2626;
+  margin-left: 4px;
+}
+
+.evalInput,
+.evalTextarea {
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.evalInput:focus,
+.evalTextarea:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.evalTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.evalRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.evalStar {
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.evalStar:hover {
+  color: #fbbf24;
+  transform: scale(1.1);
+}
+
+.evalStarActive {
+  color: #fbbf24;
+}
+
+.evalStarActive svg {
+  fill: #fbbf24;
+}
+
+.evalRatingValue {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.evalFormActionsSticky {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 16px;
+}
+
+.evalSaveBtnAlt,
+.evalSendBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.evalSaveBtnAlt {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.evalSaveBtnAlt:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+.evalSendBtn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.evalSendBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.evalSaveBtnAlt:disabled,
+.evalSendBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .evalFormActionsSticky {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .evalSaveBtnAlt,
+  .evalSendBtn {
+    padding: 14px 16px;
+  }
+}
+
+
+/* ============================================
+   EVALUATION BOOK REPORTS STYLES (Teacher)
+   ============================================ */
+
+.evalViewReportsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.evalViewReportsBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.evalReportsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evalReportCard {
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.evalReportCard:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.evalReportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.evalReportStudent {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.evalReportStatus {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusResponded {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.statusPending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.evalReportMeta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.evalReportMeta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.evalReportFeedback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #16a34a;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.evalReportModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.evalReportModalContent {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.evalReportModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.evalReportModalHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.evalReportModalHeader button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.evalReportModalBody {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(80vh - 60px);
+}
+
+.evalReportModalBody p {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+}
+
+.evalReportModalBody h4 {
+  margin: 16px 0 8px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.evalReportFields {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.evalReportFieldItem {
+  display: flex;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 0.85rem;
+}
+
+.evalReportFeedbackBox {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+
+/* ============================================
+   NEW EVALUATION FIELD TYPE STYLES
+   ============================================ */
+
+/* Select/Dropdown */
+.evalSelect {
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+
+.evalSelect:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* Multi-Select */
+.evalMultiSelect {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.evalMultiOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.evalMultiOption:hover {
+  background: #e2e8f0;
+}
+
+.evalMultiOption input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+.evalMultiOption span {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Checkbox */
+.evalCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.evalCheckbox:hover {
+  background: #e2e8f0;
+}
+
+.evalCheckbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+.evalCheckbox span {
+  font-size: 0.95rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* File Upload */
+.evalUpload {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evalFileInput {
+  padding: 10px 12px;
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.evalFileInput:hover {
+  border-color: #6366f1;
+  background: #f1f5f9;
+}
+
+.evalFileInput:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.evalFileName {
+  font-size: 0.85rem;
+  color: #16a34a;
+  padding: 6px 10px;
+  background: #f0fdf4;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Dark Mode for new field types */
+:global(.darkMode) .evalSelect {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalMultiSelect {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+:global(.darkMode) .evalMultiOption:hover {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalMultiOption span {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalCheckbox {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+:global(.darkMode) .evalCheckbox:hover {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalCheckbox span {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalFileInput {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalFileInput:hover {
+  border-color: #6366f1;
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalFileName {
+  background: #064e3b;
+  color: #34d399;
+}
+
+
+/* ============================================
+   EVALUATION BOOK - MOBILE OPTIMIZED STYLES
+   ============================================ */
+
+/* Evaluation Book Container - Mobile First */
+.evalBookContainer {
+  padding: 0 0 180px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Header with gradient */
+.evalBookHeader {
+  padding: 20px 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 0 0 24px 24px;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.evalBookHeader h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.evalBookHeader p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Class List Cards - Mobile Optimized */
+.evalBookList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.evalBookItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border: none;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.evalBookItem:active {
+  transform: scale(0.98);
+  background: #f9fafb;
+}
+
+.evalBookIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.evalBookInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.evalBookClass {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.evalBookStudents {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.evalBookArrow {
+  color: #9ca3af;
+  font-size: 1.2rem;
+}
+
+/* View Reports Button */
+.evalViewReportsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: calc(100% - 32px);
+  margin: 0 16px 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.evalViewReportsBtn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   EVALUATION BOOK FORM - MOBILE OPTIMIZED
+   ============================================ */
+
+/* Form Header */
+.evalFormHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 12px;
+}
+
+.evalBackBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.evalBackBtn:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.evalFormTitle {
+  color: white;
+  flex: 1;
+}
+
+.evalFormTitle h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.evalFormTitle span {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* Error/Success Messages */
+.evalFormError,
+.evalFormSuccess {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  margin: 0 16px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.evalFormError {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.evalFormSuccess {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+/* Date Picker - Mobile Optimized */
+.evalDatePicker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  margin: 0 16px 16px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.evalDatePicker label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.evalDatePicker input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #1f2937;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.evalDatePicker input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+}
+
+/* Students List */
+.evalStudentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+  margin-bottom: 100px;
+}
+
+/* Field Items - Mobile Optimized */
+.evalFieldsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.evalFieldItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.evalFieldLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.evalFieldLabel .required {
+  color: #ef4444;
+  margin-left: 4px;
+}
+
+/* Input Fields - Mobile Optimized with larger touch targets */
+.evalInput,
+.evalTextarea,
+.evalSelect {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #1f2937;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.evalInput:focus,
+.evalTextarea:focus,
+.evalSelect:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.evalTextarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Rating Stars - Mobile Optimized */
+.evalRating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.evalStar {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.3rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.evalStar:active {
+  transform: scale(0.95);
+}
+
+.evalStarActive {
+  background: #fef3c7;
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+.evalStarActive svg {
+  fill: #fbbf24;
+}
+
+.evalRatingValue {
+  margin-left: auto;
+  padding: 8px 14px;
+  background: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+/* Multi-Select - Mobile Optimized */
+.evalMultiSelect {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+.evalMultiOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.evalMultiOption:active {
+  background: #f3f4f6;
+}
+
+.evalMultiOption input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: #6366f1;
+  flex-shrink: 0;
+}
+
+.evalMultiOption span {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Checkbox - Mobile Optimized */
+.evalCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.evalCheckbox:active {
+  background: #f3f4f6;
+}
+
+.evalCheckbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: #6366f1;
+  flex-shrink: 0;
+}
+
+.evalCheckbox span {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* File Upload - Mobile Optimized */
+.evalUpload {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.evalFileInput {
+  padding: 20px 16px;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  background: #f9fafb;
+  cursor: pointer;
+  text-align: center;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.evalFileInput:active {
+  border-color: #6366f1;
+  background: #f0f0ff;
+}
+
+.evalFileName {
+  font-size: 0.9rem;
+  color: #16a34a;
+  padding: 10px 14px;
+  background: #f0fdf4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Eval Book Form Actions - Fixed Bottom */
+.evalBookActions {
+  position: fixed;
+  bottom: 90px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+  /* background: rgba(248, 250, 252, 0.95); */
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  z-index: 90;
+}
+
+.evalBookSubmitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  -webkit-tap-highlight-color: transparent;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  color: white;
+  box-shadow: 
+    0 8px 24px rgba(99, 102, 241, 0.4),
+    0 4px 8px rgba(99, 102, 241, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  min-width: 200px;
+  margin-bottom :20px;
+}
+
+.evalBookSubmitBtn:active {
+  transform: scale(0.95);
+}
+
+.evalBookSubmitBtn:hover {
+  box-shadow: 
+    0 12px 32px rgba(99, 102, 241, 0.5),
+    0 6px 12px rgba(99, 102, 241, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.evalBookSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.2);
+}
+
+/* Safe area for notched devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .evalBookActions {
+    bottom: calc(90px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ============================================
+   EVALUATION BOOK REPORTS - MOBILE OPTIMIZED
+   ============================================ */
+
+.evalReportsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.evalReportCard {
+  padding: 16px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.evalReportCard:active {
+  transform: scale(0.98);
+  background: #f9fafb;
+}
+
+.evalReportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.evalReportStudent {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.evalReportStatus {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusResponded {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.statusPending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.evalReportMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.evalReportMeta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.evalReportFeedback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #16a34a;
+  padding-top: 10px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* Report Modal - Mobile Optimized */
+.evalReportModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0;
+  animation: fadeIn 0.2s ease;
+}
+
+.evalReportModalContent {
+  background: white;
+  border-radius: 24px 24px 0 0;
+  width: 100%;
+  max-height: 85vh;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+.evalReportModalContent::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: #d1d5db;
+  border-radius: 2px;
+  margin: 12px auto;
+}
+
+.evalReportModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.evalReportModalHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.evalReportModalHeader button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #f3f4f6;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+.evalReportModalBody {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(85vh - 80px);
+}
+
+.evalReportModalBody p {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.evalReportModalBody h4 {
+  margin: 20px 0 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.evalReportFields {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.evalReportFieldItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.evalReportFieldItem:last-child {
+  border-bottom: none;
+}
+
+.evalReportFeedbackBox {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 0.95rem;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* Dark Mode for Evaluation Book Mobile */
+:global(.darkMode) .evalBookContainer {
+  background: #0f172a;
+}
+
+:global(.darkMode) .evalBookHeader {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+:global(.darkMode) .evalBookItem {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalBookItem:active {
+  background: #334155;
+}
+
+:global(.darkMode) .evalBookClass {
+  color: #f1f5f9;
+}
+
+:global(.darkMode) .evalBookStudents {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalFormHeader {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+:global(.darkMode) .evalDatePicker {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalDatePicker label {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalDatePicker input {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalInput,
+:global(.darkMode) .evalTextarea,
+:global(.darkMode) .evalSelect {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalFieldLabel {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalRating {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalStar {
+  background: #0f172a;
+  border-color: #334155;
+  color: #4b5563;
+}
+
+:global(.darkMode) .evalStarActive {
+  background: #422006;
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+:global(.darkMode) .evalRatingValue {
+  background: #1e293b;
+  color: #818cf8;
+}
+
+:global(.darkMode) .evalMultiSelect {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.darkMode) .evalMultiOption {
+  background: #0f172a;
+}
+
+:global(.darkMode) .evalMultiOption:active {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalMultiOption span {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalCheckbox {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.darkMode) .evalCheckbox:active {
+  background: #334155;
+}
+
+:global(.darkMode) .evalCheckbox span {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalFileInput {
+  background: #1e293b;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalFileName {
+  background: #064e3b;
+  color: #34d399;
+}
+
+:global(.darkMode) .evalFormActions {
+  background: #1e293b;
+  border-top-color: #334155;
+}
+
+:global(.darkMode) .evalSaveBtn {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalReportCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalReportCard:active {
+  background: #334155;
+}
+
+:global(.darkMode) .evalReportStudent {
+  color: #f1f5f9;
+}
+
+:global(.darkMode) .evalReportMeta {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalReportModalContent {
+  background: #1e293b;
+}
+
+:global(.darkMode) .evalReportModalHeader {
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .evalReportModalHeader h3 {
+  color: #f1f5f9;
+}
+
+:global(.darkMode) .evalReportModalHeader button {
+  background: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .evalReportModalBody p {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalReportFields {
+  background: #0f172a;
+}
+
+:global(.darkMode) .evalReportFieldItem {
+  border-bottom-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .evalReportFeedbackBox {
+  background: #064e3b;
+  border-color: #065f46;
+  color: #d1fae5;
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 380px) {
+  .evalBookList {
+    padding: 0 12px;
+    gap: 10px;
+  }
+  
+  .evalBookItem {
+    padding: 14px;
+    border-radius: 14px;
+  }
+  
+  .evalBookIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+  
+  .evalBookClass {
+    font-size: 0.95rem;
+  }
+  
+  .evalViewReportsBtn {
+    width: calc(100% - 24px);
+    margin: 0 12px 12px;
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+  
+  .evalFormHeader {
+    padding: 14px 12px;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .evalBackBtn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .evalFormTitle h3 {
+    font-size: 1.05rem;
+  }
+  
+  .evalDatePicker {
+    margin: 0 12px 12px;
+    padding: 12px;
+  }
+  
+  .evalDatePicker input {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+  
+  .evalStudentsList {
+    padding: 0 12px;
+    gap: 14px;
+  }
+  
+  .evalInput,
+  .evalTextarea,
+  .evalSelect {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+  
+  .evalStar {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+  
+  .evalMultiOption {
+    padding: 10px 12px;
+  }
+  
+  .evalCheckbox {
+    padding: 14px;
+  }
+  
+  .evalFormActions {
+    padding: 14px 12px;
+    gap: 8px;
+  }
+  
+  .evalSaveBtn,
+  .evalSendBtn {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+  
+  .evalReportsList {
+    padding: 0 12px;
+  }
+  
+  .evalReportCard {
+    padding: 14px;
+  }
+  
+  .evalReportStudent {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet and larger - keep mobile-like but centered */
+@media (min-width: 768px) {
+  .evalBookContainer {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .evalBookHeader {
+    border-radius: 0 0 24px 24px;
+    max-width: 500px;
+    margin: 0 auto 16px;
+  }
+  
+  .evalFormActions {
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+  }
+  
+  .evalSaveBtn,
+  .evalSendBtn {
+    flex: 1;
+    order: unset;
+  }
+  
+  .evalReportModalContent {
+    max-width: 450px;
+    border-radius: 24px;
+    margin: auto;
+  }
+  
+  .evalReportModal {
+    align-items: center;
+    padding: 20px;
+  }
+}
+
+
+/* Evaluation Form Actions */
+.evalFormActions {
+  position: fixed;
+  bottom: 100px;
+  left: 960px;
+  right: 16px;
+  padding: 14px 100px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 100;
+  border-radius: 16px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.evalSaveBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--primary-color, #6F56FF) 0%, var(--secondary-color, #8FA2FF) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(111, 86, 255, 0.3);
+  min-width: 180px;
+}
+
+.evalSaveBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(111, 86, 255, 0.4);
+}
+
+.evalSaveBtn:active {
+  transform: translateY(0);
+}
+
+.evalSaveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.evalSaveBtn svg {
+  font-size: 1.1rem;
+}
+
+/* Evaluation Form Error State */
+.formErrorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.formErrorState .emptyIcon {
+  font-size: 3rem;
+  color: #ef4444;
+  margin-bottom: 16px;
+}
+
+.formErrorState p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Evaluation Report Header */
+.evalReportHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.evalReportTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.evalReportTitle h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.evalReportSubtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Evaluation Report Stats */
+.evalReportStats {
+  display: flex;
+  gap: 12px;
+  padding: 0 20px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.evalReportStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.evalReportStatNum {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color, #6F56FF);
+}
+
+.evalReportStat small {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* Report Loading Header with Back Button */
+.reportLoadingHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.backBtnAlt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--primary-color, #6F56FF) 0%, var(--secondary-color, #8FA2FF) 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(111, 86, 255, 0.3);
+}
+
+.backBtnAlt:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(111, 86, 255, 0.4);
+}
+
+.backBtnAlt:active {
+  transform: scale(0.98);
+}
+
+.backBtnAlt svg {
+  font-size: 1rem;
+}
+
+.loadingText {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+:global(.darkMode) .backBtnAlt {
+  box-shadow: 0 2px 8px rgba(111, 86, 255, 0.2);
+}
+
+:global(.darkMode) .loadingText {
+  color: #94a3b8;
+}
+
+
+/* Fixed Back Button for Report View */
+.fixedBackButtonContainer {
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.fixedBackButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--primary-color, #6F56FF) 0%, var(--secondary-color, #8FA2FF) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(111, 86, 255, 0.3);
+}
+
+.fixedBackButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(111, 86, 255, 0.4);
+}
+
+.fixedBackButton:active {
+  transform: scale(0.98);
+}
+
+.fixedBackButton svg {
+  font-size: 1.1rem;
+}
+
+:global(.darkMode) .fixedBackButtonContainer {
+  background: #1e293b;
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .fixedBackButton {
+  box-shadow: 0 4px 12px rgba(111, 86, 255, 0.2);
+}

@@ -1,0 +1,206 @@
+.container {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.count {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.selectAllBtn {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.selectAllBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.selectAllBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.categories {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.category {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.category:last-child {
+  border-bottom: none;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.categoryHeader:hover {
+  background: #eeeeee;
+}
+
+.categoryLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chevron {
+  color: #666;
+  font-size: 16px;
+}
+
+.categoryLabel {
+  font-weight: 600;
+  color: #333;
+}
+
+.categoryCount {
+  font-size: 12px;
+  color: #888;
+}
+
+.categoryCheckbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.categoryCheckbox:hover:not(:disabled) {
+  border-color: #667eea;
+}
+
+.categoryCheckbox.checked {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.categoryCheckbox.partial {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+  opacity: 0.7;
+}
+
+.categoryCheckbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.permissionsList {
+  overflow: hidden;
+}
+
+.permissionItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px 10px 40px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.permissionItem:last-child {
+  border-bottom: none;
+}
+
+.permissionItem:hover:not(.disabled) {
+  background: #f8f8f8;
+}
+
+.permissionItem.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #667eea;
+  cursor: pointer;
+}
+
+.checkbox:disabled {
+  cursor: not-allowed;
+}
+
+.permissionLabel {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.permissionPath {
+  font-size: 12px;
+  color: #999;
+  font-family: monospace;
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Scrollbar styling */
+.categories::-webkit-scrollbar {
+  width: 6px;
+}
+
+.categories::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.categories::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.categories::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}

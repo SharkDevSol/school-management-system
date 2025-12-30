@@ -1,0 +1,1318 @@
+/* Guardian Profile - Modern Mobile-first styles */
+
+/* Fields Stack */
+.fieldsStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.fieldItem:last-child {
+  border-bottom: none;
+}
+
+.fieldItem:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.fieldValue {
+  font-size: 1.05rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Tab Title */
+.tabTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 16px 20px 8px;
+}
+
+/* Wards Summary in Profile Tab */
+.wardsSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wardSummaryItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.wardSummaryItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.wardSummaryAvatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.wardSummaryAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wardSummaryAvatar span {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.wardSummaryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wardSummaryName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.wardSummaryClass {
+  font-size: 0.85rem;
+  color: #6b7280;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Wards Container */
+.wardsContainer {
+  padding-bottom: 20px;
+}
+
+/* Posts Container */
+.postsContainer {
+  padding-bottom: 20px;
+}
+
+/* Communications Container */
+.communicationsContainer {
+  padding: 0;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #999;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyState p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Error Container */
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.errorContainer p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.retryButton {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.retryButton:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .tabTitle {
+    padding: 20px 24px 12px;
+    font-size: 1.2rem;
+  }
+  
+  .fieldItem {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fieldLabel {
+    font-size: 0.85rem;
+  }
+  
+  .fieldValue {
+    text-align: right;
+  }
+  
+  .wardsSummary {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .wardSummaryItem {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* Hover effects for non-touch devices */
+@media (hover: hover) {
+  .retryButton:hover {
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+  }
+  
+  .wardSummaryItem:hover {
+    background: #f0f0f0;
+  }
+}
+
+
+/* Dark mode support */
+:global(.darkMode) .fieldsStack,
+:global(body.dark-mode) .fieldsStack {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .fieldLabel,
+:global(body.dark-mode) .fieldLabel {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .fieldValue,
+:global(body.dark-mode) .fieldValue {
+  color: #f1f5f9;
+}
+
+:global(.darkMode) .tabTitle,
+:global(body.dark-mode) .tabTitle {
+  color: #f1f5f9;
+}
+
+:global(.darkMode) .wardSummaryItem,
+:global(body.dark-mode) .wardSummaryItem {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.darkMode) .wardSummaryName,
+:global(body.dark-mode) .wardSummaryName {
+  color: #f1f5f9;
+}
+
+:global(.darkMode) .wardSummaryClass,
+:global(body.dark-mode) .wardSummaryClass {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .emptyState,
+:global(body.dark-mode) .emptyState {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .errorContainer p,
+:global(body.dark-mode) .errorContainer p {
+  color: #94a3b8;
+}
+
+
+/* Mark List Tab Styles */
+.markListContainer {
+  padding-bottom: 100px;
+}
+
+.wardSelector {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wardSelector::-webkit-scrollbar {
+  display: none;
+}
+
+.wardSelectorBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.wardSelectorBtn:active {
+  transform: scale(0.97);
+}
+
+.wardSelectorActive {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: transparent;
+  color: white;
+}
+
+.wardSelectorAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.wardSelectorActive .wardSelectorAvatar {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.wardSelectorName {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.selectedWardInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 0 16px 16px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 12px;
+}
+
+.selectedWardName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.selectedWardClass {
+  font-size: 0.85rem;
+  color: #15803d;
+  background: rgba(22, 163, 74, 0.15);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.markListCards {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subjectCard {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  animation: cardFadeIn 0.4s ease-out;
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.subjectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.subjectName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.statusPass {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.statusFail {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.marksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.markItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+.markLabel {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.markValue {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.totalLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+.totalValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.termInfo {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Dark mode for mark list */
+:global(.darkMode) .wardSelectorBtn,
+:global(body.dark-mode) .wardSelectorBtn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .wardSelectorActive,
+:global(body.dark-mode) .wardSelectorActive {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+:global(.darkMode) .selectedWardInfo,
+:global(body.dark-mode) .selectedWardInfo {
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+}
+
+:global(.darkMode) .selectedWardName,
+:global(body.dark-mode) .selectedWardName {
+  color: #a7f3d0;
+}
+
+:global(.darkMode) .selectedWardClass,
+:global(body.dark-mode) .selectedWardClass {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.2);
+}
+
+:global(.darkMode) .subjectCard,
+:global(body.dark-mode) .subjectCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .subjectHeader,
+:global(body.dark-mode) .subjectHeader {
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .subjectName,
+:global(body.dark-mode) .subjectName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .markItem,
+:global(body.dark-mode) .markItem {
+  background: #334155;
+}
+
+:global(.darkMode) .markLabel,
+:global(body.dark-mode) .markLabel {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .markValue,
+:global(body.dark-mode) .markValue {
+  color: #e2e8f0;
+}
+
+
+/* Attendance Tab Styles */
+.attendanceContainer {
+  padding-bottom: 100px;
+}
+
+.periodSelector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 16px;
+}
+
+.periodLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.periodDropdown {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1f2937;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.periodDropdown:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+.attendanceCards {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.attendanceCard {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  animation: cardFadeIn 0.4s ease-out;
+}
+
+.attendanceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.attendancePeriod {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.weekStart {
+  font-size: 0.8rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.dayItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.dayLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+.dayStatus {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.statusP {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #059669;
+}
+
+.statusA {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #dc2626;
+}
+
+.statusL {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #d97706;
+}
+
+.status- {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.summaryLabel {
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.summaryValueP {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.summaryValueA {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.summaryValueL {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #d97706;
+}
+
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  margin: 0 16px;
+  background: #fef2f2;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.errorState p {
+  color: #dc2626;
+  font-size: 0.95rem;
+  margin: 0 0 16px;
+}
+
+/* Dark mode for attendance */
+:global(.darkMode) .periodLabel {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .periodDropdown {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .attendanceCard {
+  background: #1e293b;
+}
+
+:global(.darkMode) .attendanceHeader {
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .attendancePeriod {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .weekStart {
+  background: #334155;
+  color: #94a3b8;
+}
+
+:global(.darkMode) .dayLabel {
+  color: #64748b;
+}
+
+:global(.darkMode) .status- {
+  background: #334155;
+  color: #64748b;
+}
+
+:global(.darkMode) .summaryRow {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+:global(.darkMode) .summaryLabel {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .errorState {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+/* Responsive adjustments for attendance */
+@media (min-width: 480px) {
+  .daysGrid {
+    gap: 10px;
+  }
+  
+  .dayStatus {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+  
+  .dayLabel {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .attendanceCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ============================================
+   EVALUATION BOOK TAB STYLES
+   ============================================ */
+
+.evalBookContainer {
+  padding: 0;
+}
+
+.evalBookHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.evalBackBtn {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.evalBackBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.evalHeaderInfo {
+  flex: 1;
+  color: white;
+}
+
+.evalHeaderInfo h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.evalHeaderInfo span {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.evalFieldsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evalFieldItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.evalFieldLabel {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.evalFieldValue {
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.noData {
+  color: #94a3b8;
+  font-style: italic;
+  text-align: center;
+  padding: 16px;
+}
+
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedbackTextarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.feedbackTextarea:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.feedbackSubmitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.feedbackSubmitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.feedbackSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.evalBookList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evalBookCard {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.evalCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.evalCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.evalStudentName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.evalDate {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.evalStatus {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statussent,
+.statuspending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.statusresponded,
+.statuscompleted {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.evalCardClass {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.evalFeedbackPreview {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #16a34a;
+  margin-bottom: 12px;
+}
+
+.evalViewBtn {
+  width: 100%;
+  padding: 12px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.evalViewBtn:hover {
+  background: #e2e8f0;
+}
+
+
+/* ============================================
+   EVALUATION BOOK REPORTS STYLES (Guardian)
+   ============================================ */
+
+.evalViewReportsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.evalViewReportsBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.evalReportHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.evalReportHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.evalWardSelector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.evalWardSelector label {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.evalWardSelector select {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.evalReportSummary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.evalSummaryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.evalSummaryValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.evalSummaryLabel {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.evalReportMonths {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.evalMonthGroup {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.evalMonthTitle {
+  margin: 0;
+  padding: 12px 16px;
+  background: #f8fafc;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.evalMonthList {
+  padding: 8px;
+}
+
+.evalReportItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.evalReportItem:hover {
+  background: #f8fafc;
+}
+
+.evalReportItemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.evalReportItemName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.evalReportItemDate {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.evalReportItemStatus {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
+.statusDone {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.statusPend {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+
+/* Enhanced Ward Detail Cards */
+.wardDetailCard {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.wardDetailCard:last-child {
+  margin-bottom: 0;
+}
+
+.wardDetailHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.wardDetailAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-color, #6F56FF) 0%, var(--secondary-color, #8FA2FF) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wardDetailAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wardAvatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.wardDetailInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wardDetailName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.wardDetailClass {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.wardDetailStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.wardStatItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.wardStatLabel {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.wardStatValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Dark mode for ward cards */
+:global(.darkMode) .wardDetailCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.darkMode) .wardDetailHeader {
+  border-bottom-color: #334155;
+}
+
+:global(.darkMode) .wardDetailName {
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .wardDetailClass {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .wardStatItem {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+:global(.darkMode) .wardStatLabel {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .wardStatValue {
+  color: #e2e8f0;
+}

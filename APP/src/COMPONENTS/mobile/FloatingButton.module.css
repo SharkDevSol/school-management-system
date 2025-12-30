@@ -1,0 +1,121 @@
+/* Floating Button Styles */
+.floatingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.floatingList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 56px;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+}
+
+.floatingItem {
+  cursor: pointer;
+}
+
+.triggerWrapper {
+  cursor: pointer;
+  z-index: 101;
+}
+
+/* Floating Nav Button */
+.floatingNavBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floatingNavBtn:active {
+  transform: scale(0.95);
+}
+
+/* Floating Menu Item Button */
+.floatingMenuBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  color: #374151;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.floatingMenuBtn:active {
+  transform: scale(0.95);
+  background: #f3f4f6;
+}
+
+.floatingMenuBtn span {
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.floatingMenuBtn svg {
+  font-size: 1.1rem;
+}
+
+/* Active state */
+.floatingMenuBtnActive {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.floatingMenuBtnActive span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark mode */
+:global(.darkMode) .floatingNavBtn {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+:global(.darkMode) .floatingMenuBtn {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+:global(.darkMode) .floatingMenuBtn span {
+  color: #94a3b8;
+}
+
+:global(.darkMode) .floatingMenuBtn:active {
+  background: #334155;
+}
+
+:global(.darkMode) .floatingMenuBtnActive {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+}
+
+:global(.darkMode) .floatingMenuBtnActive span {
+  color: rgba(255, 255, 255, 0.9);
+}

@@ -1,0 +1,813 @@
+/* MarkListFrontend.css - Modern Mark List Design with CSS Variables */
+
+/* System Container */
+.mark-list-system {
+  min-height: 100vh;
+  padding: 24px;
+  background: var(--bg-gradient);
+}
+
+.system-header {
+  margin-bottom: 32px;
+}
+
+.system-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.system-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Navigation Tabs */
+.system-navigation {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  background: var(--card-bg);
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  width: fit-content;
+}
+
+.nav-tab {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-tab:hover {
+  background: var(--hover-bg);
+  color: var(--text-color);
+}
+
+.nav-tab.active {
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 4px 16px var(--primary-shadow-lg);
+}
+
+/* System Content */
+.system-content {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Mark List Form */
+.mark-list-form {
+  max-width: 100%;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.form-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 8px;
+  background: var(--bg-secondary);
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.mode-toggle button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-toggle button.active {
+  background: var(--card-bg);
+  color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Controls */
+.form-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+}
+
+.control-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.control-group select {
+  padding: 14px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.control-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.control-group select:disabled {
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.load-btn {
+  padding: 14px 28px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px var(--primary-shadow-lg);
+}
+
+.load-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-shadow);
+}
+
+.load-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.all-terms-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.35);
+}
+
+.all-terms-btn:hover:not(:disabled) {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+/* Create Form Section */
+.create-form {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 24px;
+}
+
+.create-form h3 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 0 0 20px;
+}
+
+.components-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.component-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.component-row input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.component-row input[type="text"]:focus {
+  border-color: var(--primary-color);
+}
+
+.component-row input[type="number"] {
+  width: 100px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  outline: none;
+  text-align: center;
+}
+
+.percentage-sign {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.remove-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: var(--error-bg);
+  color: var(--error-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: var(--error-border);
+}
+
+.component-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--card-bg);
+  color: var(--primary-color);
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--primary-lighter);
+}
+
+.total-percentage {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.total-percentage.valid {
+  background: var(--success-bg);
+  color: var(--success-color);
+}
+
+.total-percentage.invalid {
+  background: var(--error-bg);
+  color: var(--error-color);
+}
+
+.create-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px var(--primary-shadow-lg);
+}
+
+.create-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-shadow);
+}
+
+.create-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mark List View */
+.mark-list-view {
+  margin-top: 24px;
+}
+
+.mark-list-view h3 {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin: 0 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.marks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.marks-table th {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.marks-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+.marks-table tr:hover td {
+  background: var(--bg-secondary);
+}
+
+.student-name {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.mark-input {
+  width: 70px;
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.mark-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.total-cell {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.status-cell {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.status-cell.pass {
+  color: var(--success-color);
+}
+
+.status-cell.fail {
+  color: var(--error-color);
+}
+
+.save-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--success-color) 0%, #16a34a 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+}
+
+/* Teacher Assignment */
+.teacher-assignment {
+  max-width: 100%;
+}
+
+.assignment-header {
+  margin-bottom: 28px;
+}
+
+.assignment-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+.assignment-header p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.existing-assignments {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.existing-assignments h3 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.teacher-summary {
+  background: var(--card-bg);
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-color);
+}
+
+.teacher-summary strong {
+  color: var(--text-color);
+}
+
+.teacher-summary span {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.assignment-table-container {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+.assignment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assignment-table th {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 16px 12px;
+  font-weight: 600;
+}
+
+.assignment-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--card-bg);
+  text-align: center;
+}
+
+.teacher-header {
+  text-align: left !important;
+  min-width: 180px;
+}
+
+.subject-header {
+  min-width: 120px;
+}
+
+.subject-class-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.subject-name {
+  font-weight: 600;
+}
+
+.class-name {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.teacher-name {
+  text-align: left !important;
+}
+
+.teacher-info .name {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.teacher-info .role {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  display: none;
+}
+
+.checkmark {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background: var(--primary-gradient);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px var(--primary-shadow-lg);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-shadow);
+}
+
+/* Class Ranking */
+.class-ranking {
+  max-width: 100%;
+}
+
+.ranking-header {
+  margin-bottom: 28px;
+}
+
+.ranking-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+.ranking-header p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.ranking-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.ranking-summary {
+  background: var(--primary-gradient);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 28px;
+  color: white;
+}
+
+.ranking-summary h3 {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+}
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.ranking-table-container {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ranking-table th {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 16px 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ranking-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.score-value {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.score-status {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.no-data {
+  color: var(--text-muted);
+}
+
+/* Messages */
+.message {
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.message.success {
+  background: var(--success-bg);
+  color: var(--success-color);
+  border: 1px solid var(--success-border);
+}
+
+.message.error {
+  background: var(--error-bg);
+  color: var(--error-color);
+  border: 1px solid var(--error-border);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state h2 {
+  color: var(--text-color);
+  margin: 0 0 12px;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mark-list-system {
+    padding: 16px;
+  }
+  
+  .system-content {
+    padding: 20px;
+  }
+  
+  .form-controls,
+  .ranking-controls {
+    flex-direction: column;
+  }
+  
+  .control-group {
+    width: 100%;
+  }
+  
+  .mode-toggle {
+    width: 100%;
+  }
+  
+  .mode-toggle button {
+    flex: 1;
+  }
+  
+  .component-row {
+    flex-wrap: wrap;
+  }
+  
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,146 @@
+/* AttendanceView.module.css - Updated with real data display */
+.container { min-height: 100vh; background: var(--bg-gradient); padding: 24px; }
+.loadingContainer { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 40vh; gap: 16px; }
+.loader { width: 50px; height: 50px; border: 4px solid var(--border-color); border-top-color: var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.header { background: var(--primary-gradient); border-radius: 20px; padding: 24px 32px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 10px 40px var(--primary-shadow); }
+.headerLeft { display: flex; align-items: center; gap: 20px; color: white; }
+.headerIcon { width: 56px; height: 56px; background: rgba(255,255,255,0.2); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+.headerLeft h1 { margin: 0; font-size: 1.6rem; }
+.headerLeft p { margin: 4px 0 0; opacity: 0.85; font-size: 0.9rem; }
+
+.controls { background: var(--card-bg); border-radius: 16px; padding: 20px 24px; margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; box-shadow: var(--card-shadow); }
+.selectGroup { display: flex; align-items: center; gap: 10px; }
+.selectGroup label { font-weight: 500; color: var(--text-secondary); }
+.selectGroup select { padding: 10px 14px; border: 2px solid var(--border-color); border-radius: 10px; font-size: 0.95rem; background: var(--input-bg); color: var(--text-color); outline: none; }
+.refreshBtn { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--primary-gradient); color: white; border: none; border-radius: 10px; font-weight: 500; cursor: pointer; margin-left: auto; }
+
+.emptyState { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px; background: var(--card-bg); border-radius: 20px; color: var(--text-muted); }
+.emptyState h3 { margin: 20px 0 8px; color: var(--text-color); }
+
+/* Stats Grid */
+.statsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+.statCard { background: var(--card-bg); border-radius: 16px; padding: 24px; box-shadow: var(--card-shadow); }
+.statHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.statHeader h3 { margin: 0; font-size: 1.1rem; color: var(--text-color); }
+.studentCount { font-size: 0.85rem; color: var(--text-secondary); background: var(--bg-secondary); padding: 4px 12px; border-radius: 20px; }
+.statBars { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.statRow { display: flex; align-items: center; gap: 12px; }
+.statLabel { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); min-width: 100px; }
+.barContainer { flex: 1; height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
+.bar { height: 100%; border-radius: 4px; transition: width 0.3s; }
+.barPresent { background: var(--success-color); }
+.barAbsent { background: var(--error-color); }
+.statValue { font-size: 0.85rem; font-weight: 600; color: var(--text-color); min-width: 80px; text-align: right; }
+.viewBtn { width: 100%; padding: 12px; background: var(--primary-gradient); color: white; border: none; border-radius: 10px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.viewBtn:hover { opacity: 0.9; }
+
+
+/* Details View */
+.detailsHeader { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+.detailsHeader h2 { margin: 0; color: var(--text-color); flex: 1; }
+.backBtn { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--bg-secondary); color: var(--text-color); border: none; border-radius: 8px; font-weight: 500; cursor: pointer; }
+
+.summaryRow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.summaryCard { background: var(--card-bg); border-radius: 14px; padding: 20px; display: flex; align-items: center; gap: 16px; box-shadow: var(--card-shadow); }
+.summaryCard svg { font-size: 28px; }
+.summaryNum { display: block; font-size: 1.6rem; font-weight: 700; color: var(--text-color); }
+.summaryLabel { font-size: 0.8rem; color: var(--text-secondary); }
+.summaryTotal { border-left: 4px solid var(--primary-color); }
+.summaryTotal svg { color: var(--primary-color); }
+.summaryPresent { border-left: 4px solid var(--success-color); }
+.summaryPresent svg, .summaryPresent .summaryNum { color: var(--success-color); }
+.summaryAbsent { border-left: 4px solid var(--error-color); }
+.summaryAbsent svg, .summaryAbsent .summaryNum { color: var(--error-color); }
+.summaryLate { border-left: 4px solid var(--warning-color); }
+.summaryLate svg, .summaryLate .summaryNum { color: var(--warning-color); }
+.summaryPermission { border-left: 4px solid #6366f1; }
+.summaryPermission svg, .summaryPermission .summaryNum { color: #6366f1; }
+
+.searchBox { display: flex; align-items: center; gap: 12px; background: var(--card-bg); border-radius: 12px; padding: 12px 16px; margin-bottom: 20px; box-shadow: var(--card-shadow); max-width: 400px; }
+.searchBox svg { color: var(--text-muted); }
+.searchBox input { flex: 1; border: none; background: transparent; font-size: 0.95rem; outline: none; color: var(--text-color); }
+
+.tableWrapper { background: var(--card-bg); border-radius: 16px; overflow-x: auto; box-shadow: var(--card-shadow); margin-bottom: 20px; }
+.attendanceTable { width: 100%; border-collapse: collapse; min-width: 700px; }
+.attendanceTable th { background: var(--bg-secondary); padding: 14px 12px; text-align: center; font-weight: 600; color: var(--text-color); font-size: 0.85rem; }
+.attendanceTable th:nth-child(2) { text-align: left; }
+.attendanceTable td { padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center; }
+.attendanceTable td:nth-child(2) { text-align: left; }
+.studentName { font-weight: 500; color: var(--text-color); }
+.attendanceTable tbody tr:hover { background: var(--bg-secondary); }
+
+.iconPresent { color: var(--success-color); font-size: 18px; }
+.iconAbsent { color: var(--error-color); font-size: 18px; }
+.iconLate { color: var(--warning-color); font-size: 18px; }
+.iconPermission { color: #6366f1; font-size: 18px; }
+
+.legend { display: flex; gap: 24px; justify-content: center; padding: 16px; background: var(--bg-secondary); border-radius: 12px; color: var(--text-secondary); font-size: 0.9rem; flex-wrap: wrap; }
+.legend span { display: flex; align-items: center; gap: 6px; }
+
+/* Mark Badge Styles */
+.markHeader { cursor: pointer; user-select: none; }
+.markHeader:hover { background: var(--primary-color); color: white; }
+.markHeader svg { vertical-align: middle; margin-left: 4px; }
+
+.markBadge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; min-width: 50px; text-align: center; }
+.markGreen { background: rgba(34, 197, 94, 0.15); color: #16a34a; }
+.markYellow { background: rgba(234, 179, 8, 0.15); color: #ca8a04; }
+.markRed { background: rgba(239, 68, 68, 0.15); color: #dc2626; }
+.markNA { background: var(--bg-secondary); color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .container { padding: 16px; }
+  .header { flex-direction: column; text-align: center; }
+  .headerLeft { flex-direction: column; }
+  .controls { flex-direction: column; }
+  .statsGrid { grid-template-columns: 1fr; }
+  .summaryRow { grid-template-columns: repeat(2, 1fr); }
+  .detailsHeader { flex-direction: column; }
+}
+
+
+
+.assignBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.assignBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.teacherInfo {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.teacherInfo strong {
+  color: var(--primary-color);
+}
+
+.emptyHint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.iconEmpty {
+  color: var(--text-muted);
+}

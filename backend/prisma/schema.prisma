@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // To use custom schema like 'school_comms', uncomment below:
+  // schemas = ["school_comms"]
+}
+
+model User {
+  id               String    @id @default(uuid()) @db.Uuid
+  name             String
+  role             Role
+  username         String?   @unique
+  // Add other fields as needed (e.g., phone, etc.)
+  sentRequests     Request[] @relation("SentRequests")
+  receivedRequests Request[] @relation("ReceivedRequests")
+  sentLogs         ChatLog[] @relation("SentLogs")
+  // Relations for students/classes (minimal for permissions)
+  students         Student[]
+  taughtClasses    Class[] // Assuming many-to-many via join table if needed
+}
+
+enum Role {
+  director
+  teacher
+  guardian
+}
+
+model Student {
+  id          String @id @default(uuid()) @db.Uuid
+  studentName String
+  classId     String @db.Uuid
+  guardianId  String @db.Uuid
+  // Other fields...
+
+  guardian User  @relation(fields: [guardianId], references: [id], onDelete: Cascade)
+  class    Class @relation(fields: [classId], references: [id], onDelete: Cascade)
+}
+
+model Class {
+  id        String    @id @default(uuid()) @db.Uuid
+  name      String    @unique
+  teacherId String?   @db.Uuid
+  students  Student[]
+
+  teacher User? @relation(fields: [teacherId], references: [id])
+  // Note: For multi-teacher, add junction model TeacherClass
+}
+
+model Request {
+  id          String        @id @default(uuid()) @db.Uuid
+  senderId    String        @db.Uuid
+  recipientId String        @db.Uuid
+  questions   Json // e.g., ["Question 1", "Question 2"]
+  responses   Json? // e.g., [{"questionIndex": 0, "answer": "Answer 1", "timestamp": "2023-..."}]
+  status      RequestStatus
+  createdAt   DateTime      @default(now()) @db.Timestamptz
+  expiresAt   DateTime?     @db.Timestamptz
+
+  sender    User      @relation("SentRequests", fields: [senderId], references: [id], onDelete: Cascade)
+  recipient User      @relation("ReceivedRequests", fields: [recipientId], references: [id], onDelete: Cascade)
+  logs      ChatLog[]
+
+  @@index([senderId, createdAt])
+  @@index([recipientId, createdAt])
+  @@index([status])
+}
+
+enum RequestStatus {
+  pending
+  responded
+  expired
+}
+
+model ChatLog {
+  id        String   @id @default(uuid()) @db.Uuid
+  requestId String   @db.Uuid
+  action    String // e.g., 'request_sent', 'response_added'
+  actorId   String   @db.Uuid
+  timestamp DateTime @default(now()) @db.Timestamptz
+
+  request Request @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  actor   User    @relation("SentLogs", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([requestId])
+  @@index([actorId])
+}
+
+// Note: Extend existing models if needed (e.g., via @@map for legacy tables).
+// For integration with existing pool-based tables, queries in utils will mix Prisma + pool.

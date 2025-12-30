@@ -1,0 +1,203 @@
+.formContainer {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.formHeader h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.formHeader p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroupFull {
+    grid-column: 1 / -1;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.formGroup input,
+.formGroup select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #6c5ce7;
+}
+
+.formGroup select:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+.columnsSection {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.columnsSection h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.columnRow {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.columnRow input[name="name"] {
+    flex-grow: 1;
+}
+
+.columnRow input[name="max_points"] {
+    width: 100px;
+}
+
+.columnRow input {
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.columnRow button {
+    background: #fde2e4;
+    color: #d90429;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.columnRow button:hover {
+    background: #f1c1c4;
+}
+
+.columnRow button:disabled {
+    background: #eee;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.addColumnButton {
+    background: none;
+    border: 1px dashed #6c5ce7;
+    color: #6c5ce7;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.addColumnButton:hover {
+    background: #f0eefe;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.cancelButton, .saveButton {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.cancelButton {
+    background-color: #eee;
+    color: #555;
+}
+
+.cancelButton:hover {
+    background-color: #ddd;
+}
+
+.saveButton {
+    background-color: #6c5ce7;
+    color: #fff;
+}
+
+.saveButton:hover {
+    background-color: #5848c5;
+}
+
+.saveButton:disabled {
+    background-color: #a9a1e9;
+    cursor: not-allowed;
+}
+
+.loading, .errorMessage {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.errorMessage {
+    background-color: #fff0f1;
+    color: #d90429;
+    border: 1px solid #f1c1c4;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

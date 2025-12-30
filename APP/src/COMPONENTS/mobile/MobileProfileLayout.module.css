@@ -1,0 +1,170 @@
+/* Mobile Profile Layout - Full screen mobile-first design */
+.mobileLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  width: 100%;
+  background: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+/* App Header - Sticky top bar */
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: white;
+  padding: 18px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.logoutButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(4px);
+}
+
+.logoutButton:hover,
+.logoutButton:active {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Pull to Refresh Indicator */
+.pullIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f5f5f5;
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+.refreshIcon {
+  font-size: 1.5rem;
+  color: var(--primary-color, #e67e22);
+  transition: transform 0.1s ease;
+}
+
+/* Dark mode support */
+.darkMode {
+  background: #0f172a;
+}
+
+.darkMode .contentArea {
+  background: #0f172a;
+}
+
+.darkMode .pullIndicator {
+  background: #0f172a;
+}
+
+.darkMode .pullText {
+  color: #94a3b8;
+}
+
+/* Global dark mode using body class */
+:global(body.dark-mode) .mobileLayout {
+  background: #0f172a;
+}
+
+:global(body.dark-mode) .contentArea {
+  background: #0f172a;
+}
+
+:global(body.dark-mode) .pullIndicator {
+  background: #0f172a;
+}
+
+:global(body.dark-mode) .pullText {
+  color: #94a3b8;
+}
+
+.refreshIcon.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pullText {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Content Area - Scrollable main content */
+.contentArea {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: 80px; /* Space for bottom navigation */
+}
+
+/* Smooth scrolling with momentum */
+.contentArea::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .mobileLayout {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+  }
+  
+  .appHeader {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobileLayout {
+    max-width: 420px;
+  }
+}
+
+/* Safe area insets for notched devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .appHeader {
+    padding-top: calc(16px + env(safe-area-inset-top));
+  }
+  
+  .contentArea {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+}

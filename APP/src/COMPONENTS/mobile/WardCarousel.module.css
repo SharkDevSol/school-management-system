@@ -1,0 +1,221 @@
+/* Ward Carousel - Horizontal scrolling ward cards */
+.carouselContainer {
+  padding: 16px 0;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.wardCard {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wardCard:active {
+  transform: scale(0.99);
+}
+
+.wardCard.expanded {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.wardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wardAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e67e22;
+  flex-shrink: 0;
+}
+
+.wardAvatarPlaceholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+}
+
+.wardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.wardName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wardClass {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+
+.chevron {
+  font-size: 1.25rem;
+  color: #999;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.chevron.rotated {
+  transform: rotate(90deg);
+}
+
+/* Ward Details - Expanded content */
+.wardDetails {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.detailRow:last-of-type {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailValue {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Quick Actions */
+.quickActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.actionButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 12px;
+  color: #e67e22;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:active {
+  background: #eee;
+  transform: scale(0.98);
+}
+
+/* Indicators */
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #e67e22;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .carousel {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px;
+    gap: 16px;
+  }
+  
+  .wardCard {
+    min-width: 280px;
+    max-width: 320px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Hover effects for non-touch devices */
+@media (hover: hover) {
+  .wardCard:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .actionButton:hover {
+    background: #e67e22;
+    color: white;
+  }
+}

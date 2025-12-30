@@ -1,0 +1,426 @@
+/* StudentFormBuilder.module.css - Using Global Theme Variables */
+
+.container {
+  width: 100%;
+  padding: 0;
+  background-color: transparent;
+}
+
+.formBuilder {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  padding: 0;
+  margin: 0 0 2rem;
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.formHeader {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.formHeader h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.formHeader p {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.formContent {
+  padding: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23757575' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+.customField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.customField:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary-color);
+}
+
+.customField strong {
+  color: var(--text-color);
+}
+
+.removeField {
+  background: none;
+  border: none;
+  color: var(--error-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.removeField:hover {
+  background: var(--error-bg);
+  transform: scale(1.1);
+}
+
+.button {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--primary-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-shadow-lg);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 550px;
+  width: 90%;
+  box-shadow: var(--card-shadow-hover);
+  border: 1px solid var(--border-color);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalContent h3 {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modalActions button {
+  flex: 1;
+}
+
+.fieldTypeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.fieldTypeOption {
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--card-bg);
+  color: var(--text-secondary);
+}
+
+.fieldTypeOption:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  background: var(--hover-bg);
+}
+
+.fieldTypeOption.selected {
+  border-color: var(--primary-color);
+  background: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.fieldTypeIcon {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.fieldTypeOption span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.checkboxInput {
+  accent-color: var(--primary-color);
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.errorMessage {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  text-align: center;
+  background: var(--error-bg);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--error-border);
+}
+
+/* Section Title */
+.formContent h3 {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .formHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .formContent {
+    padding: 1.5rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .fieldTypeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formBuilder {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .fieldTypeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+
+  .modalContent {
+    padding: 1.5rem;
+  }
+
+  .customField {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+
+/* Translation Section Styles */
+.translationSection {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  border-radius: 12px;
+  border: 2px solid #90caf9;
+}
+
+.translationBlock {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.translationBlock:last-child {
+  margin-bottom: 0;
+}
+
+.translationHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.langBadge {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.langNative {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.optionTranslations {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.optionTranslationRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.optionOriginal {
+  min-width: 120px;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #555;
+  border: 1px solid #e0e0e0;
+}
+
+/* No Languages Selected Info */
+.noLanguagesInfo {
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #e65100;
+}
+
+.noLanguagesInfo a {
+  color: #1565c0;
+  text-decoration: underline;
+  cursor: pointer;
+}

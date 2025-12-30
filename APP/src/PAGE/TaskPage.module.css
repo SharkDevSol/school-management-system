@@ -1,0 +1,307 @@
+/* TaskPage.module.css - Modern Task Dashboard Design with CSS Variables */
+.container {
+  min-height: 100vh;
+  padding: 24px;
+  background: var(--bg-gradient);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerIcon {
+  width: 64px;
+  height: 64px;
+  background: var(--primary-gradient);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  box-shadow: 0 12px 32px var(--primary-shadow-lg);
+}
+
+.headerTitle h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 6px;
+}
+
+.headerTitle p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Progress Section */
+.progressSection {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--card-shadow);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.progressTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progressStats {
+  display: flex;
+  gap: 24px;
+}
+
+.progressStat {
+  text-align: center;
+}
+
+.progressStatNum {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.progressStatLabel {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.progressBarContainer {
+  position: relative;
+  height: 12px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.progressBar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progressPercent {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Task Grid */
+.taskGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.taskLink {
+  text-decoration: none;
+}
+
+.taskCard {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.taskCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.taskCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.taskCard:hover::before {
+  opacity: 1;
+}
+
+.taskCard.completed {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+}
+
+.taskCard.completed::before {
+  background: linear-gradient(180deg, var(--success-color) 0%, #16a34a 100%);
+  opacity: 1;
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.taskNumber {
+  width: 44px;
+  height: 44px;
+  background: var(--primary-gradient);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px var(--primary-shadow);
+}
+
+.taskCard.completed .taskNumber {
+  background: linear-gradient(135deg, var(--success-color) 0%, #16a34a 100%);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.taskStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.statusPending {
+  background: var(--warning-bg);
+  color: var(--warning-color);
+}
+
+.statusCompleted {
+  background: var(--success-bg);
+  color: var(--success-color);
+}
+
+.taskTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.taskDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+.taskFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.taskMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.taskAction {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.taskCard:hover .taskAction {
+  transform: translateX(4px);
+}
+
+.taskCard.completed .taskAction {
+  background: linear-gradient(135deg, var(--success-color) 0%, #16a34a 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .header {
+    flex-direction: column;
+  }
+  
+  .taskGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .progressStats {
+    gap: 16px;
+  }
+}

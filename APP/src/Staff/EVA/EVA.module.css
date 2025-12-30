@@ -1,0 +1,499 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.title h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ff9800;
+  margin: 0;
+}
+
+.titleIcon {
+  font-size: 2rem;
+  color: #ff9800;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tabButton {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabButton.active {
+  color: #ff9800;
+  border-bottom-color: #ff9800;
+}
+
+.filterSection, .evaluationSection, .historySection {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filterSection h2, .evaluationSection h2, .historySection h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  color: #ff9800;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.sectionIcon {
+  font-size: 1.25rem;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.filterGroup select, .filterGroup input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.filterGroup select:focus, .filterGroup input:focus {
+  outline: none;
+  border-color: #ff9800;
+}
+
+.dateTimeInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  color: #888;
+}
+
+.dateTimeInput input {
+  padding-left: 2.5rem;
+  width: 100%;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.evaluationTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.evaluationTable th, .evaluationTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.evaluationTable th {
+  background-color: #fff9e6;
+  color: #ff9800;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.evaluationTable input[type="number"], .evaluationTable input[type="text"] {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.evaluationTable input[type="text"] {
+  width: 120px;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.saveDraftButton, .submitButton, .filterButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.saveDraftButton {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.saveDraftButton:hover {
+  background-color: #e0e0e0;
+}
+
+.submitButton {
+  background-color: #ff9800;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #e68900;
+}
+
+.filterButton {
+  background-color: #ff9800;
+  color: white;
+}
+
+.filterButton:hover {
+  background-color: #e68900;
+}
+
+.historyFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.historyFilters select, .historyFilters input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+.historyTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.historyTable th, .historyTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.historyTable th {
+  background-color: #fff9e6;
+  color: #ff9800;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.statusBadge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.statusBadge.done {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusBadge.draft {
+  background-color: #fff8e1;
+  color: #ff8f00;
+}
+
+.historyActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewButton, .downloadButton, .deleteButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.viewButton:hover {
+  background-color: #ff9800;
+  color: white;
+}
+
+.downloadButton:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.searchFilterContainer {
+  margin-bottom: 1.5rem;
+}
+
+.searchBox {
+  position: relative;
+  margin-bottom: 1rem;
+  max-width: 400px;
+}
+
+.searchBox input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.dateInputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.evaluationHeader {
+  background-color: #fff9e6;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.evaluationHeader h2 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.evaluationMeta {
+  display: flex;
+  gap: 1.5rem;
+  color: #666;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.exportButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.exportButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.exportButton:hover {
+  background-color: #e0e0e0;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.backButton:hover {
+  background-color: #e0e0e0;
+}
+
+.clickableRow {
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.paginationButton {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: #f5f5f5;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.activePage {
+  background-color: #ff9800;
+  color: white;
+  border-color: #ff9800;
+}
+
+.noResults {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .historyFilters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .historyFilters select, .historyFilters input {
+    width: 100%;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .saveDraftButton, .submitButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .evaluationMeta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .exportButtons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .evaluationTable th, .evaluationTable td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .evaluationTable input[type="number"] {
+    width: 60px;
+  }
+  
+  .evaluationTable input[type="text"] {
+    width: 80px;
+  }
+  
+  .historyTable th, .historyTable td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .viewButton, .downloadButton, .deleteButton {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}

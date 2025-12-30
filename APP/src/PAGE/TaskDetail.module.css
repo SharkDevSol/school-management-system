@@ -1,0 +1,709 @@
+/* PAGE/TaskDetail.module.css - Full Screen Layout */
+
+.container {
+  padding: 2rem 3rem;
+  width: 100%;
+  background-color: #ffffff;
+  min-height: calc(100vh - 70px);
+}
+
+.title {
+  color: #ff6b00;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.description {
+  color: #666666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contentArea {
+  background: #fffaf5;
+  border: 1px solid #ffddd0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.completeButton {
+  background: linear-gradient(to right, #4caf50, #66bb6a);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto 0;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.completeButton:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.completeButton.disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Form Styles - Task 1 */
+.form {
+  background: #fffaf5;
+  border: 1px solid #ffddd0;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333333;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.select {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid #ffddd0;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select:focus {
+  border-color: #ff6b00;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+}
+
+.error {
+  color: #f44336;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  background: #ffebee;
+  border-radius: 6px;
+}
+
+/* Merge Section Styles - Task 6 */
+.mergeSection {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 1400px;
+}
+
+.mergeSection h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.infoText {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* Data Section Styles */
+.dataSection {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 0 auto 2rem;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 1400px;
+}
+
+.dataSection h3 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.previewInfo {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats */
+.stats {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.statItem {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Table Styles */
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #e9ecef;
+  width: 100%;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.dataTable th {
+  background: linear-gradient(135deg, #ff6b00, #ff8e53);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.dataTable td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.95rem;
+}
+
+.dataTable tr:hover {
+  background-color: #f8f9fa;
+}
+
+.teacherCell {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.workTimeCell {
+  text-align: center;
+}
+
+.classCell {
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.subjectCell {
+  color: #7b1fa2;
+  font-weight: 500;
+}
+
+.tableFooter {
+  text-align: center;
+  color: #666;
+  margin-top: 1rem;
+  font-style: italic;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Assignment Grid - Task 6 */
+.assignmentGrid {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin: 1.5rem auto;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.assignmentHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.assignmentRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.assignmentRow:hover {
+  background-color: #f8f9fa;
+}
+
+.assignmentRow:last-child {
+  border-bottom: none;
+}
+
+.classSubjectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.className {
+  font-weight: 600;
+  color: #1976d2;
+  font-size: 1rem;
+}
+
+.subjectName {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.teacherSelection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.teacherSelect {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.teacherSelect:focus {
+  border-color: #ff6b00;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+.teacherSelect:hover {
+  border-color: #ccc;
+}
+
+/* Work Time Badge */
+.workTimeBadge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.workTimeBadge.fullTime {
+  background: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.workTimeBadge.partTime {
+  background: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ffe0b2;
+}
+
+/* Action Section */
+.actionSection {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.mergeButton {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mergeButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.mergeButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.mergeButton.loading {
+  background: linear-gradient(135deg, #ff9800, #ffb74d);
+}
+
+/* Empty State */
+.emptyState {
+  background: #fff3cd;
+  border: 2px dashed #ffeaa7;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.emptyState h4 {
+  color: #856404;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.emptyState p {
+  color: #856404;
+  margin-bottom: 1.5rem;
+}
+
+.requirements {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirements li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.requirements li.completed {
+  color: #28a745;
+}
+
+.requirements li.pending {
+  color: #dc3545;
+}
+
+.warning {
+  color: #856404;
+  background: #fff3cd;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Error Section */
+.errorSection {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.errorSection h4 {
+  color: #721c24;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.errorText {
+  color: #721c24;
+  margin: 0;
+}
+
+/* Complete Section */
+.completeSection {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #e9ecef;
+  margin-top: 2rem;
+}
+
+.completeHint {
+  color: #666;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Schedule Status */
+.scheduleStatus {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0 auto 24px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.scheduleStatus h3 {
+  margin: 0 0 20px 0;
+  color: #495057;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.statusItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  background: white;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.statusItem.success {
+  background: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.statusItem.warning {
+  background: #fff3cd;
+  border-color: #ffeaa7;
+  color: #856404;
+}
+
+.statusItem.error {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.statusLabel {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.statusValue {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.checkingStatus {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #e7f3ff;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.alertWarning {
+  background: #fff3cd;
+  border: 1px solid #ffecb5;
+  color: #856404;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.alertSuccess {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Schedule Note */
+.scheduleNote {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.scheduleNote ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.scheduleNote li {
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.teacherAssignment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statSuccess {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.successNote {
+  background-color: #e8f5e8;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #2e7d32;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .form {
+    padding: 1.5rem;
+  }
+
+  .assignmentHeader,
+  .assignmentRow {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .assignmentHeader {
+    display: none;
+  }
+  
+  .assignmentRow {
+    padding: 1rem;
+  }
+  
+  .classSubjectInfo {
+    text-align: center;
+  }
+  
+  .teacherSelection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mergeSection {
+    padding: 1.5rem;
+  }
+  
+  .dataSection {
+    padding: 1.5rem;
+  }
+
+  .statusGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,225 @@
+/* Profile Header - Modern glassmorphism design */
+.profileHeader {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 50%, #c0392b 100%);
+  color: white;
+  padding: 32px 20px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient orbs */
+.profileHeader::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.profileHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: #f5f5f5;
+  border-radius: 32px 32px 0 0;
+}
+
+/* Secondary floating orb */
+.profileHeader .avatarContainer::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -100px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.avatarContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  animation: fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 6px rgba(255, 255, 255, 0.15),
+    inset 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.avatar:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.35),
+    0 0 0 8px rgba(255, 255, 255, 0.2),
+    inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.avatarPlaceholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  border: 5px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 6px rgba(255, 255, 255, 0.15);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.avatarPlaceholder:hover {
+  transform: scale(1.05);
+}
+
+.userInfo {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.6s ease-out 0.15s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 10px;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease-out 0.25s both;
+}
+
+/* Size variants */
+.profileHeader.small {
+  padding: 20px 20px 32px;
+}
+
+.profileHeader.small .avatar,
+.profileHeader.small .avatarPlaceholder {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  border-width: 4px;
+}
+
+.profileHeader.small .name {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.profileHeader.small .subtitle {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+}
+
+.profileHeader.medium {
+  padding: 24px 20px 36px;
+}
+
+.profileHeader.medium .avatar,
+.profileHeader.medium .avatarPlaceholder {
+  width: 95px;
+  height: 95px;
+  font-size: 2.25rem;
+}
+
+.profileHeader.medium .name {
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .profileHeader {
+    padding: 40px 24px 52px;
+  }
+  
+  .avatar,
+  .avatarPlaceholder {
+    width: 140px;
+    height: 140px;
+    font-size: 3.5rem;
+    border-width: 6px;
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+}
+
+/* Dark mode support */
+:global(.darkMode) .profileHeader::after,
+:global(body.dark-mode) .profileHeader::after {
+  background: #0f172a;
+}

@@ -1,0 +1,835 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-color);
+}
+
+/* Quiz Overlay Styles */
+.quizOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 107, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.quizModal {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(255, 107, 0, 0.3);
+  border: 2px solid #ff6b00;
+}
+
+.quizHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.quizIcon {
+  font-size: 3rem;
+  color: #ff6b00;
+  margin-bottom: 1rem;
+}
+
+.quizHeader h2 {
+  color: #ff6b00;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.quizHeader p {
+  color: #666666;
+  font-size: 1.1rem;
+}
+
+.quizGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.quizCard {
+  background: #fffaf5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #ffddd0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quizCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ff6b00;
+}
+
+.quizCard.easy::before {
+  background: #00c853;
+}
+
+.quizCard.medium::before {
+  background: #ff9800;
+}
+
+.quizCard.hard::before {
+  background: #f44336;
+}
+
+.quizCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.quizCardHeader h3 {
+  color: #ff6b00;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.difficulty {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.difficulty.easy {
+  background: #e8f5e8;
+  color: #00c853;
+}
+
+.difficulty.medium {
+  background: #fff3e0;
+  color: #ff9800;
+}
+
+.difficulty.hard {
+  background: #ffebee;
+  color: #f44336;
+}
+
+.quizInfo {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quizMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.metaIcon {
+  font-size: 0.9rem;
+}
+
+.startQuizBtn {
+  background: #ff6b00;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.startQuizBtn:hover {
+  background: #ff8c3a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.btnIcon {
+  transition: transform 0.3s ease;
+}
+
+.startQuizBtn:hover .btnIcon {
+  transform: translateX(3px);
+}
+
+.quizFooter {
+  text-align: center;
+  border-top: 1px solid #ffddd0;
+  padding-top: 2rem;
+}
+
+.skipButton {
+  background: transparent;
+  color: #ff6b00;
+  border: 2px solid #ff6b00;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.skipButton:hover {
+  background: #ff6b00;
+  color: white;
+}
+
+.quizNote {
+  color: #666666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Blurred Content */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background: linear-gradient(135deg, #ff6b00 0%, #ff8c3a 100%);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 1rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(255, 107, 0, 0.2);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.logo {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.logoText {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #fff5eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logoSubtext {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateX(5px);
+}
+
+.navLink.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.navLink.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: #ffffff;
+  border-radius: 0 2px 2px 0;
+}
+
+.navIcon {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+  min-width: 24px;
+}
+
+.linkText {
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Section Headers */
+.navSection {
+  margin: 1.5rem 0 0.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.sectionHeader:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sectionIcon {
+  font-size: 1rem;
+  color: #fff5eb;
+}
+
+.chevronIcon {
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.subMenu {
+  list-style: none;
+  padding-left: 1.5rem;
+  overflow: hidden;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  margin-left: 280px;
+  margin-top: 70px;
+  transition: margin 0.3s ease;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  width: calc(100% - 280px);
+}
+
+.contentWrapper {
+  padding: 0;
+  flex: 1;
+  background-color: var(--bg-color);
+  min-height: calc(100vh - 70px);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: filter 0.3s ease;
+}
+
+.contentWrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contentWrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.contentWrapper::-webkit-scrollbar-thumb {
+  background: #ffddd0;
+  border-radius: 10px;
+}
+
+.contentWrapper::-webkit-scrollbar-thumb:hover {
+  background: #ff6b00;
+}
+
+/* Mobile Header */
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ff6b00 0%, #ff8c3a 100%);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  box-shadow: 0 1px 3px rgba(255, 107, 0, 0.2);
+  height: 60px;
+}
+
+.mobileLogo {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuIcon {
+  transition: all 0.3s ease;
+}
+
+.mobileProfile {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobileProfile:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.profileIcon {
+  color: white;
+}
+
+/* Profile Header */
+.profileHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color, #667eea), var(--secondary-color, #764ba2));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 280px;
+  z-index: 80;
+  height: 70px;
+}
+
+.searchContainer {
+  position: relative;
+  margin-right: auto;
+}
+
+.searchInput {
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  width: 250px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.searchInput:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.profileControls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.notificationBtn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.notificationBtn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.notificationIcon {
+  transition: all 0.3s ease;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #ff6b00;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.profileDropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.profileDropdown:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.profileAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(to right, var(--primary-color, #667eea), var(--secondary-color, #764ba2));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.avatarIcon {
+  color: white;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+.dropdownArrow {
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.1);
+  min-width: 200px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  z-index: 100;
+  overflow: hidden;
+  border: 1px solid #ffddd0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: #333333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.dropdownItem:hover {
+  background-color: #fffaf5;
+  color: #ff6b00;
+}
+
+.dropdownIcon {
+  margin-right: 0.75rem;
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Mobile Menu Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 107, 0, 0.3);
+  z-index: 95;
+  backdrop-filter: blur(3px);
+}
+
+/* Mobile Profile Dropdown */
+.mobileProfileDropdown {
+  position: fixed;
+  top: 70px;
+  right: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.1);
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 100;
+  overflow: hidden;
+  border: 1px solid #ffddd0;
+}
+
+/* Mobile Profile Menu */
+.mobileProfileMenu {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobileProfileLink {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.mobileProfileLink:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.mobileMenuIcon {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.mobileLogoutBtn {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.mobileLogoutBtn:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .mainContent {
+    margin-left: 0;
+    margin-top: 70px;
+    width: 100%;
+  }
+  
+  .profileHeader {
+    left: 0;
+  }
+  
+  .contentShifted {
+    margin-left: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .mobileOpen {
+    box-shadow: 5px 0 25px rgba(255, 107, 0, 0.3);
+  }
+  
+  .searchInput {
+    width: 200px;
+  }
+  
+  .profileHeader {
+    padding: 1rem;
+  }
+
+  .mainContent {
+    margin-top: 70px;
+  }
+
+  .contentWrapper {
+    padding: 0;
+    min-height: calc(100vh - 70px);
+  }
+
+  .quizModal {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .quizGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quizHeader h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .searchInput {
+    width: 150px;
+    padding-left: 2rem;
+  }
+
+  .profileName {
+    display: none;
+  }
+
+  .profileDropdown {
+    padding: 0.25rem;
+  }
+
+  .dropdownArrow {
+    display: none;
+  }
+
+  .contentWrapper {
+    padding: 1rem;
+  }
+
+  .quizOverlay {
+    padding: 1rem;
+  }
+
+  .quizModal {
+    padding: 1rem;
+  }
+}
+

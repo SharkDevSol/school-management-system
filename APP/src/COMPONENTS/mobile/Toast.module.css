@@ -1,0 +1,139 @@
+/* Toast Notification - Temporary feedback messages */
+.toastContainer {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease;
+  pointer-events: auto;
+}
+
+.toast.exiting {
+  animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.closeButton:hover,
+.closeButton:active {
+  background: rgba(0, 0, 0, 0.05);
+  color: #666;
+}
+
+/* Type variants */
+.toast.success {
+  border-left: 4px solid #27ae60;
+}
+
+.toast.success .icon {
+  background: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+}
+
+.toast.error {
+  border-left: 4px solid #e74c3c;
+}
+
+.toast.error .icon {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+}
+
+.toast.info {
+  border-left: 4px solid #3498db;
+}
+
+.toast.info .icon {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+/* Safe area for notched devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .toastContainer {
+    top: calc(80px + env(safe-area-inset-top));
+  }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .toastContainer {
+    top: 100px;
+    max-width: 420px;
+  }
+  
+  .toast {
+    padding: 16px 20px;
+  }
+}

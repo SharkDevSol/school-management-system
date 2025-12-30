@@ -1,0 +1,1720 @@
+.dashboard {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.weekToggle {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.weekToggle button {
+  padding: 8px 16px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.weekToggle button.active {
+  background: #007bff;
+  color: white;
+}
+
+.weekToggle button:hover:not(.active) {
+  background: #f8f9fa;
+}
+
+.generateBtn {
+  padding: 8px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.generateBtn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.generateBtn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.conflicts {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.conflict {
+  padding: 8px;
+  margin: 5px 0;
+  background: white;
+  border-radius: 4px;
+  border-left: 4px solid #dc3545;
+}
+
+.views {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.classView h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  gap: 1px;
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.timetableHeader {
+  display: contents;
+}
+
+.timeColumn, .dayColumn {
+  background: #343a40;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.periodRow {
+  display: contents;
+}
+
+.timeCell {
+  background: #e9ecef;
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slotCell {
+  background: white;
+  padding: 8px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot {
+  text-align: center;
+  padding: 8px;
+  background: #e7f3ff;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.className {
+  font-weight: bold;
+  font-size: 12px;
+  color: #495057;
+}
+
+.subject {
+  font-size: 14px;
+  color: #007bff;
+  margin: 2px 0;
+}
+
+.teacher {
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.emptySlot {
+  color: #6c757d;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .timetable {
+    grid-template-columns: 80px repeat(5, 1fr);
+    font-size: 12px;
+  }
+
+  .timeCell, .slotCell {
+    padding: 4px;
+  }
+}
+.dashboard {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navigation {
+  display: flex;
+  gap: 15px;
+}
+
+.navLink {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.navLink:hover {
+  background: #5a6268;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.weekToggle {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.weekToggle button {
+  padding: 8px 16px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.weekToggle button.active {
+  background: #007bff;
+  color: white;
+}
+
+.weekToggle button:hover:not(.active) {
+  background: #f8f9fa;
+}
+
+.generateBtn {
+  padding: 8px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.generateBtn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.generateBtn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.conflicts {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.conflict {
+  padding: 8px;
+  margin: 5px 0;
+  background: white;
+  border-radius: 4px;
+  border-left: 4px solid #dc3545;
+}
+
+.views {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.classView h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 120px repeat(7, 1fr);
+  gap: 1px;
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.timetableHeader {
+  display: contents;
+}
+
+.timeColumn, .dayColumn {
+  background: #343a40;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.periodRow {
+  display: contents;
+}
+
+.timeCell {
+  background: #e9ecef;
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slotCell {
+  background: white;
+  padding: 8px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot {
+  text-align: center;
+  padding: 8px;
+  background: #e7f3ff;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.className {
+  font-weight: bold;
+  font-size: 12px;
+  color: #495057;
+}
+
+.subject {
+  font-size: 14px;
+  color: #007bff;
+  margin: 2px 0;
+}
+
+.teacher {
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.emptySlot {
+  color: #6c757d;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .timetable {
+    grid-template-columns: 80px repeat(7, 1fr);
+    font-size: 12px;
+  }
+
+  .timeCell, .slotCell {
+    padding: 4px;
+  }
+}
+.dashboard {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navigation {
+  display: flex;
+  gap: 15px;
+}
+
+.navLink {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.navLink:hover {
+  background: #5a6268;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.weekToggle {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.weekToggle button {
+  padding: 8px 16px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.weekToggle button.active {
+  background: #007bff;
+  color: white;
+}
+
+.weekToggle button:hover:not(.active) {
+  background: #f8f9fa;
+}
+
+.generateBtn {
+  padding: 8px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.generateBtn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.generateBtn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.conflicts {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.conflict {
+  padding: 8px;
+  margin: 5px 0;
+  background: white;
+  border-radius: 4px;
+  border-left: 4px solid #dc3545;
+}
+
+.views {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.classView h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  gap: 1px;
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.timetableHeader {
+  display: contents;
+}
+
+.timeColumn, .dayColumn {
+  background: #343a40;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.periodRow {
+  display: contents;
+}
+
+.timeCell {
+  background: #e9ecef;
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slotCell {
+  background: white;
+  padding: 8px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot {
+  text-align: center;
+  padding: 8px;
+  background: #e7f3ff;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.className {
+  font-weight: bold;
+  font-size: 12px;
+  color: #495057;
+}
+
+.subject {
+  font-size: 14px;
+  color: #007bff;
+  margin: 2px 0;
+}
+
+.teacher {
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.emptySlot {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #6c757d;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+  border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .timetable {
+    grid-template-columns: 80px repeat(5, 1fr);
+    font-size: 12px;
+  }
+
+  .timeCell, .slotCell {
+    padding: 4px;
+  }
+}
+.dashboard {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navigation {
+  display: flex;
+  gap: 15px;
+}
+
+.navLink {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.navLink:hover {
+  background: #5a6268;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.weekToggle {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.weekToggle button {
+  padding: 8px 16px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.weekToggle button.active {
+  background: #007bff;
+  color: white;
+}
+
+.weekToggle button:hover:not(.active) {
+  background: #f8f9fa;
+}
+
+.generateBtn {
+  padding: 8px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.generateBtn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.generateBtn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+  border: 1px solid #f5c6cb;
+}
+
+.conflicts {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.conflict {
+  padding: 8px;
+  margin: 5px 0;
+  background: white;
+  border-radius: 4px;
+  border-left: 4px solid #ffc107;
+}
+
+.views {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.classView h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.noData {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.noData ul {
+  text-align: left;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.classesList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.classSchedule {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+.classSchedule h3 {
+  margin: 0 0 15px 0;
+  color: #495057;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  gap: 1px;
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.timetableHeader {
+  display: contents;
+}
+
+.timeColumn, .dayColumn {
+  background: #343a40;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.periodRow {
+  display: contents;
+}
+
+.timeCell {
+  background: #e9ecef;
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slotCell {
+  background: white;
+  padding: 8px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot {
+  text-align: center;
+  padding: 8px;
+  background: #e7f3ff;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subject {
+  font-size: 14px;
+  color: #007bff;
+  margin: 2px 0;
+  font-weight: 500;
+}
+
+.teacher {
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.emptySlot {
+  color: #6c757d;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .timetable {
+    grid-template-columns: 80px repeat(5, 1fr);
+    font-size: 12px;
+  }
+
+  .timeCell, .slotCell {
+    padding: 4px;
+  }
+}
+.success {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+  border: 1px solid #c3e6cb;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.statCard {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid #007bff;
+}
+
+.statCard h3 {
+  margin: 0 0 10px 0;
+  color: #6c757d;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.statNumber {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.help {
+  background: #e7f3ff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.help h4 {
+  margin: 0 0 10px 0;
+  color: #0056b3;
+}
+
+.help ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.help li {
+  margin: 5px 0;
+}
+
+.subjectCode {
+  font-size: 10px;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+.conflict pre {
+  background: #f8f9fa;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 5px 0;
+  font-size: 12px;
+  overflow-x: auto;
+}
+.configForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 20px 0;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+.formGroup label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.formGroup input, .formGroup select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.submitButton {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submitButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.error {
+  color: red;
+  margin: 10px 0;
+}
+.success {
+  color: green;
+  margin: 10px 0;
+}
+.shiftIdToggle, .shiftGroupToggle {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+.shiftIdToggle button, .shiftGroupToggle button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.shiftIdToggle button.active, .shiftGroupToggle button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+.shiftIdToggle, .shiftGroupToggle {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+.shiftIdToggle button, .shiftGroupToggle button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.shiftIdToggle button.active, .shiftGroupToggle button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+.error {
+  color: red;
+  margin: 10px 0;
+}
+.success {
+  color: green;
+  margin: 10px 0;
+}
+.dashboard, .configContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.navLink {
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.navLink:hover {
+  background: #007bff;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.weekToggle, .shiftIdToggle, .shiftGroupToggle {
+  display: flex;
+  gap: 5px;
+}
+
+.weekToggle button, .shiftIdToggle button, .shiftGroupToggle button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #f0f0f0;
+}
+
+.weekToggle button.active, .shiftIdToggle button.active, .shiftGroupToggle button.active {
+  background: #007bff;
+  color: white;
+}
+
+.generateBtn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.generateBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.conflictsSection {
+  margin-bottom: 20px;
+}
+
+.conflict {
+  background: #ffe5e5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  flex: 1;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.classView {
+  margin-top: 20px;
+}
+
+.classSchedule {
+  margin-bottom: 20px;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.timetableHeader {
+  display: contents;
+}
+
+.timeColumn, .dayColumn {
+  background: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.periodRow {
+  display: contents;
+}
+
+.timeCell {
+  padding: 10px;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;}
+
+  .dashboard, .configContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.navLink {
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.navLink:hover {
+  background: #007bff;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.weekToggle, .shiftIdToggle, .shiftGroupToggle {
+  display: flex;
+  gap: 5px;
+}
+
+.weekToggle button, .shiftIdToggle button, .shiftGroupToggle button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #f0f0f0;
+}
+
+.weekToggle button.active, .shiftIdToggle button.active, .shiftGroupToggle button.active {
+  background: #007bff;
+  color: white;
+}
+
+.generateBtn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.generateBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.conflictsSection {
+  margin-bottom: 20px;
+}
+
+.conflict {
+  background: #ffe5e5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  flex: 1;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.classView {
+  margin-top: 20px;
+}
+
+.classSchedule {
+  margin-bottom: 20px;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.timetableHeader {
+  display: contents;
+}
+
+.timeColumn, .dayColumn {
+  background: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.periodRow {
+  display: contents;
+}
+
+.timeCell {
+  padding: 10px;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.slotCell {
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.slot {
+  background: #e6f3ff;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.emptySlot {
+  color: #999;
+}
+
+.subject {
+  font-weight: bold;
+}
+
+.teacher {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.subjectCode {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.noData {
+  text-align: center;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+
+.help {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.configForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.formGroup label {
+  flex: 0 0 200px;
+  font-weight: bold;
+}
+
+.formGroup input,
+.formGroup select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dayButtons {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.dayButtons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.dayButtons button.active {
+  background: #007bff;
+  color: white;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.submitButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #6c757d;
+  color: white;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.navigation {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.dashboard, .configContainer {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #1a3c34;
+  margin: 0;
+}
+
+.navigation {
+  display: flex;
+  gap: 12px;
+}
+
+.navLink {
+  color: #007bff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: #e9ecef;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navLink:hover {
+  background: #007bff;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterGroup label {
+  font-weight: 600;
+  color: #1a3c34;
+}
+
+.weekToggle, .shiftIdToggle, .shiftGroupToggle {
+  display: flex;
+  gap: 8px;
+}
+
+.weekToggle button, .shiftIdToggle button, .shiftGroupToggle button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #e9ecef;
+  color: #1a3c34;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.weekToggle button.active, .shiftIdToggle button.active, .shiftGroupToggle button.active {
+  background: #007bff;
+  color: white;
+}
+
+.generateBtn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.generateBtn:hover {
+  background: #218838;
+}
+
+.generateBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.success {
+  color: #28a745;
+  background: #d4edda;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.conflictsSection {
+  margin-bottom: 24px;
+}
+
+.conflict {
+  background: #fff3cd;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.conflictHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #856404;
+}
+
+.conflictDetails {
+  margin-top: 8px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: max-height 0.3s ease;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statCard h3 {
+  margin: 0 0 8px;
+  color: #1a3c34;
+  font-size: 18px;
+}
+
+.statNumber {
+  font-size: 28px;
+  color: #007bff;
+  font-weight: 700;
+}
+
+.classView {
+  margin-top: 24px;
+}
+
+.classSchedule {
+  margin-bottom: 24px;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timetableHeader {
+  display: contents;
+}
+
+.timeColumn, .dayColumn {
+  background: #1a3c34;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.periodRow {
+  display: contents;
+}
+
+.timeCell {
+  padding: 12px;
+  text-align: center;
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 500;
+}
+
+.slotCell {
+  padding: 12px;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.slot {
+  background: #e3f2fd;
+  padding: 8px;
+  border-radius: 4px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.emptySlot {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.subject {
+  font-weight: 600;
+  color: #1a3c34;
+}
+
+.teacher {
+  font-size: 0.9em;
+  color: #495057;
+}
+
+.subjectCode {
+  font-size: 0.8em;
+  color: #6c757d;
+}
+
+.loading {
+  text-align: center;
+  padding: 24px;
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.noData {
+  text-align: center;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.help {
+  margin-top: 16px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #495057;
+}
+
+.configForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px}

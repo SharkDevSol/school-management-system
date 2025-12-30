@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* ========================================
+     ALKHWARIZM BRAND COLOR SYSTEM
+     These are the default colors used when 
+     not changed from settings
+     ======================================== */
+  
+  /* 🟣 Primary Color (Main Identity) - Digital Violet */
+  --primary-color: #6F56FF;
+  /* Secondary Color - Soft Indigo (for hover states, secondary buttons) */
+  --secondary-color: #8FA2FF;
+  
+  /* ⚪ Secondary Colors (Light & Modern) */
+  --soft-lilac: #D9C7FF;           /* Backgrounds, cards, sections */
+  --cloud-white: #F7F8FC;          /* Main app background */
+  --cool-gray: #E6EAF1;            /* Borders, tables, subtle separators */
+  
+  /* 🔵 Support / UI Colors */
+  --soft-indigo: #8FA2FF;          /* Hover states, secondary buttons */
+  --ice-blue: #EAF0FF;             /* Forms, inputs, highlighted areas */
+  
+  /* 🟢 Optional Accent (Very Small Use) */
+  --mint-accent: #3FE0C5;          /* Success states, notifications, active indicators */
+  
+  /* Computed Theme Variables - Updated dynamically */
+  --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --primary-light: rgba(111, 86, 255, 0.1);
+  --primary-lighter: rgba(111, 86, 255, 0.05);
+  --primary-shadow: rgba(111, 86, 255, 0.3);
+  --primary-shadow-lg: rgba(111, 86, 255, 0.35);
+  
+  /* Light Mode Colors - Using Alkhwarizm Palette */
+  --bg-color: var(--cloud-white);
+  --bg-secondary: var(--soft-lilac);
+  --bg-tertiary: var(--cool-gray);
+  --bg-gradient: linear-gradient(135deg, var(--cloud-white) 0%, var(--soft-lilac) 100%);
+  --text-color: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: var(--cool-gray);
+  --border-light: var(--ice-blue);
+  --card-bg: #ffffff;
+  --card-bg-hover: var(--soft-lilac);
+  --card-shadow: 0 4px 20px rgba(111, 86, 255, 0.08);
+  --card-shadow-hover: 0 16px 40px rgba(111, 86, 255, 0.15);
+  --sidebar-bg: #1a1a2e;
+  --input-bg: var(--ice-blue);
+  --input-border: var(--cool-gray);
+  --hover-bg: var(--soft-lilac);
+  
+  /* Accent Color for Links & Focus */
+  --accent-color: var(--primary-color);
+  --link-color: var(--primary-color);
+  --focus-color: var(--primary-color);
+  
+  /* Status Colors - Using Mint Accent for Success */
+  --success-color: var(--mint-accent);
+  --success-bg: rgba(63, 224, 197, 0.15);
+  --success-border: rgba(63, 224, 197, 0.4);
+  --error-color: #dc2626;
+  --error-bg: #fee2e2;
+  --error-border: #fecaca;
+  --warning-color: #d97706;
+  --warning-bg: #fef3c7;
+  --warning-border: #fde68a;
+}
+
+body.dark-mode {
+  --bg-color: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --text-color: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: #334155;
+  --border-light: #475569;
+  --card-bg: #1e293b;
+  --card-bg-hover: #334155;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --sidebar-bg: #0f172a;
+  --input-bg: #1e293b;
+  --input-border: #334155;
+  --hover-bg: #334155;
+  
+  /* Status Colors in Dark Mode */
+  --success-bg: rgba(34, 197, 94, 0.15);
+  --success-border: rgba(34, 197, 94, 0.3);
+  --error-bg: rgba(220, 38, 38, 0.15);
+  --error-border: rgba(220, 38, 38, 0.3);
+  --warning-bg: rgba(217, 119, 6, 0.15);
+  --warning-border: rgba(217, 119, 6, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* RTL Support for Arabic */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .sidebar {
+  left: auto;
+  right: 0;
+}
+
+body.rtl .mainContent {
+  margin-left: 0;
+  margin-right: 280px;
+}
+
+body.rtl .profileHeader {
+  left: 0;
+  right: 280px;
+}
+
+body.rtl .navLink {
+  flex-direction: row-reverse;
+}
+
+body.rtl .navIcon {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+body.rtl .searchContainer {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+body.rtl .searchIcon {
+  left: auto;
+  right: 1rem;
+}
+
+body.rtl .searchInput {
+  padding: 0.6rem 2.5rem 0.6rem 1rem;
+}
+
+@media (max-width: 992px) {
+  body.rtl .mainContent {
+    margin-right: 0;
+  }
+  
+  body.rtl .profileHeader {
+    right: 0;
+  }
+}
+
+/* D
+ark Mode Global Styles for Mobile Profiles */
+body.dark-mode {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--text-color);
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label {
+  color: var(--text-secondary);
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+
+body.dark-mode button {
+  color: var(--text-color);
+}
+
+body.dark-mode .card,
+body.dark-mode [class*="Card"] {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* Ensure dark mode class works with darkMode selector too */
+body.darkMode,
+.darkMode {
+  --bg-color: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-color: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: #334155;
+  --card-bg: #1e293b;
+  --input-bg: #1e293b;
+  --input-border: #334155;
+}
+
+body.darkMode {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

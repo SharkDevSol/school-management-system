@@ -1,0 +1,154 @@
+/* Skeleton Loader - Loading placeholder animations */
+.skeletonWrapper {
+  width: 100%;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e8e8e8 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Avatar skeleton */
+.avatar {
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* Text skeleton */
+.text {
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+/* Card skeleton */
+.card {
+  background: white;
+  border-radius: 16px;
+  margin: 12px 16px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.cardTitle {
+  width: 120px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* List item skeleton */
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.listAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.listContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Profile skeleton - full profile loading state */
+.profileSkeleton {
+  width: 100%;
+}
+
+.profileHeader {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  padding: 24px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.profileHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #f5f5f5;
+  border-radius: 20px 20px 0 0;
+}
+
+.profileHeader .skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.2) 75%
+  );
+  background-size: 200% 100%;
+}
+
+.profileCards {
+  padding-top: 8px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .card {
+    margin: 16px 20px;
+    padding: 20px 24px;
+  }
+  
+  .profileHeader {
+    padding: 32px 24px 48px;
+  }
+}

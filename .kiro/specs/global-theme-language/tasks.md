@@ -1,0 +1,122 @@
+# Implementation Plan
+
+- [ ] 1. Add missing translation keys to AppContext
+  - [ ] 1.1 Add translation keys for Post page (createPost, socialFeed, shareUpdates, etc.)
+    - Add English, Amharic, Oromo, Somali, Arabic, and French translations
+    - _Requirements: 2.1_
+  - [ ] 1.2 Add translation keys for Schedule Dashboard page (scheduleDashboard, timetable, conflicts, etc.)
+    - Add translations for all supported languages
+    - _Requirements: 2.2_
+  - [ ] 1.3 Add translation keys for Report Card page (reportCard, studentReport, term, grade, etc.)
+    - Add translations for all supported languages
+    - _Requirements: 2.4_
+  - [ ] 1.4 Add translation keys for Registration pages (registerStudent, registerStaff, formFields, etc.)
+    - Add translations for all supported languages
+    - _Requirements: 2.5_
+  - [ ]* 1.5 Write property test for translation completeness
+    - **Property 2: Translation Completeness**
+    - **Validates: Requirements 2.1, 2.2, 2.3, 2.4, 2.5**
+
+- [ ] 2. Update Post page to use theme colors and translations
+  - [ ] 2.1 Import and use theme from useApp hook in Post.jsx
+    - Apply theme.primaryColor and theme.secondaryColor to buttons, headers, and accents
+    - Replace hardcoded colors with theme values
+    - _Requirements: 1.1_
+  - [ ] 2.2 Replace hardcoded text with t() translation calls in Post.jsx
+    - Update all labels, buttons, and messages to use translation function
+    - _Requirements: 2.1_
+  - [ ]* 2.3 Write property test for theme propagation on Post page
+    - **Property 1: Theme Color Propagation**
+    - **Validates: Requirements 1.1**
+
+- [ ] 3. Update Schedule Dashboard to use theme colors and translations
+  - [ ] 3.1 Apply theme colors to ScheduleDashboard.jsx
+    - Update header, tabs, action buttons, and status indicators to use theme colors
+    - Replace hardcoded color values with theme.primaryColor and theme.secondaryColor
+    - _Requirements: 1.2_
+  - [ ] 3.2 Replace hardcoded text with t() translation calls in ScheduleDashboard.jsx
+    - Update all labels, buttons, and status messages to use translation function
+    - _Requirements: 2.2_
+
+- [ ] 4. Update Communication page to use theme colors and translations
+  - [ ] 4.1 Apply theme colors to Communication.jsx
+    - Update stat cards, buttons, and status indicators to use theme colors
+    - Replace hardcoded color values with theme values
+    - _Requirements: 1.3_
+  - [ ] 4.2 Replace hardcoded text with t() translation calls in Communication.jsx
+    - Update all labels, buttons, and messages to use translation function
+    - _Requirements: 2.3_
+
+- [ ] 5. Update Report Card page to use theme colors and translations
+  - [ ] 5.1 Import useApp hook and apply theme colors to ReportCard.jsx
+    - Add useApp import and destructure theme and t
+    - Apply theme colors to header, controls, buttons, and report card styling
+    - _Requirements: 1.4_
+  - [ ] 5.2 Replace hardcoded text with t() translation calls in ReportCard.jsx
+    - Update all labels, headers, and buttons to use translation function
+    - _Requirements: 2.4_
+
+- [ ] 6. Update Mark List pages to use theme colors and translations
+  - [ ] 6.1 Apply theme colors to MarkListView.jsx and related components
+    - Import useApp and apply theme colors to headers, tables, and buttons
+    - _Requirements: 1.4_
+  - [ ] 6.2 Replace hardcoded text with t() translation calls in Mark List pages
+    - Update all labels and headers to use translation function
+    - _Requirements: 2.4_
+
+- [ ] 7. Update Registration pages to use theme colors and translations
+  - [ ] 7.1 Import useApp and apply theme colors to CreateRegisterStudent.jsx
+    - Apply theme colors to form elements, buttons, and section headers
+    - _Requirements: 1.5_
+  - [ ] 7.2 Replace hardcoded text with t() translation calls in CreateRegisterStudent.jsx
+    - Update all form labels, placeholders, and buttons to use translation function
+    - _Requirements: 2.5_
+  - [ ] 7.3 Import useApp and apply theme colors to CreateRegisterStaff components
+    - Apply theme colors to StaffForm.jsx and related components
+    - _Requirements: 1.5_
+  - [ ] 7.4 Replace hardcoded text with t() translation calls in Staff Registration pages
+    - Update all form labels, placeholders, and buttons to use translation function
+    - _Requirements: 2.5_
+
+- [ ] 8. Checkpoint - Ensure all tests pass
+  - Ensure all tests pass, ask the user if questions arise.
+
+- [ ] 9. Update CSS modules to use CSS variables consistently
+  - [ ] 9.1 Update Post.module.css to use CSS variables
+    - Replace hardcoded colors with var(--primary-color) and var(--secondary-color)
+    - _Requirements: 1.1_
+  - [ ] 9.2 Update ScheduleDashboard.module.css to use CSS variables
+    - Replace hardcoded colors with CSS variables
+    - _Requirements: 1.2_
+  - [ ] 9.3 Update Communication.module.css to use CSS variables
+    - Replace hardcoded colors with CSS variables
+    - _Requirements: 1.3_
+  - [ ] 9.4 Update ReportCard.module.css to use CSS variables
+    - Replace hardcoded colors with CSS variables
+    - _Requirements: 1.4_
+  - [ ] 9.5 Update Registration CSS modules to use CSS variables
+    - Update CreateRegisterStudent.module.css and StaffForm.module.css
+    - _Requirements: 1.5_
+
+- [ ] 10. Ensure dark mode styling works across all pages
+  - [ ] 10.1 Add dark mode styles to Post.module.css
+    - Add .dark-mode selectors for appropriate background and text colors
+    - _Requirements: 5.1, 5.2_
+  - [ ] 10.2 Add dark mode styles to ScheduleDashboard.module.css
+    - Add dark mode styling for dashboard components
+    - _Requirements: 5.1, 5.2_
+  - [ ] 10.3 Add dark mode styles to Communication.module.css
+    - Add dark mode styling for communication components
+    - _Requirements: 5.1, 5.2_
+  - [ ] 10.4 Add dark mode styles to ReportCard.module.css
+    - Add dark mode styling for report card components
+    - _Requirements: 5.1, 5.2_
+  - [ ] 10.5 Add dark mode styles to Registration CSS modules
+    - Add dark mode styling for registration forms
+    - _Requirements: 5.1, 5.2_
+  - [ ]* 10.6 Write property test for dark mode toggle
+    - **Property 5: Dark Mode Toggle Consistency**
+    - **Validates: Requirements 5.1, 5.2**
+
+- [ ] 11. Final Checkpoint - Ensure all tests pass
+  - Ensure all tests pass, ask the user if questions arise.

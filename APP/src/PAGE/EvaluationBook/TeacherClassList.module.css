@@ -1,0 +1,149 @@
+.container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  color: var(--text-primary, #1a1a2e);
+}
+
+.header p {
+  margin: 0;
+  color: var(--text-secondary, #666);
+}
+
+.loading {
+  text-align: center;
+  padding: 48px;
+  color: var(--text-secondary, #666);
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px;
+  text-align: center;
+  color: #dc2626;
+}
+
+.error p {
+  margin: 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-secondary, #666);
+}
+
+.empty svg {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary, #1a1a2e);
+}
+
+.empty p {
+  margin: 0;
+}
+
+.classList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.classCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border, #e5e7eb);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.classCard:hover {
+  border-color: var(--primary, #4f46e5);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.classIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-light, #eef2ff);
+  color: var(--primary, #4f46e5);
+  border-radius: 12px;
+  font-size: 1.25rem;
+}
+
+.classInfo {
+  flex: 1;
+}
+
+.classInfo h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: var(--text-primary, #1a1a2e);
+}
+
+.studentCount {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+}
+
+.classAction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--primary, #4f46e5);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.classAction svg:first-child {
+  font-size: 1rem;
+}
+
+.classAction svg:last-child {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .classCard {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .classAction {
+    width: 100%;
+    justify-content: center;
+  }
+}
