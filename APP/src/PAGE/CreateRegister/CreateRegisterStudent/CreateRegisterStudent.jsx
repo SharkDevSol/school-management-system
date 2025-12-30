@@ -164,7 +164,7 @@ const AddStudentS = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    axios.get('https://excellence.oddag.et/api/students/classes', { timeout: 10000 })
+    axios.get('https://school-management-system-daul.onrender.com/api/students/classes', { timeout: 10000 })
       .then(response => {
         if (response.data && Array.isArray(response.data) && response.data.length > 0) {
           setAvailableClasses(response.data);
@@ -184,7 +184,7 @@ const AddStudentS = () => {
       .finally(() => setIsLoading(false));
 
     // Fetch form structure with custom field metadata
-    axios.get('https://excellence.oddag.et/api/students/form-structure', { timeout: 10000 })
+    axios.get('https://school-management-system-daul.onrender.com/api/students/form-structure', { timeout: 10000 })
       .then(response => {
         // Ensure we have a valid structure with arrays
         const data = response.data || {};
@@ -231,7 +231,7 @@ const AddStudentS = () => {
     if (!className) return;
     setIsLoading(true);
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/students/columns/${className}`, { timeout: 10000 });
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/students/columns/${className}`, { timeout: 10000 });
       if (response.data && Array.isArray(response.data)) {
         setTableColumns(response.data.filter(col => !['username', 'password', 'guardian_username', 'guardian_password'].includes(col.column_name)));
       } else {
@@ -257,7 +257,7 @@ const AddStudentS = () => {
     
     try {
       setIsLoading(true);
-      const response = await axios.get(`https://excellence.oddag.et/api/students/search-guardian/${encodeURIComponent(phone)}`, { timeout: 10000 });
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/students/search-guardian/${encodeURIComponent(phone)}`, { timeout: 10000 });
       setFetchedGuardian({
         name: response.data.guardian_name,
         phone,
@@ -378,7 +378,7 @@ const AddStudentS = () => {
     if (window.confirm('Are you sure you want to delete the form structure? This will drop all class tables.')) {
       setIsLoading(true);
       try {
-        await axios.delete('https://excellence.oddag.et/api/students/delete-form');
+        await axios.delete('https://school-management-system-daul.onrender.com/api/students/delete-form');
         setAvailableClasses([]);
         setTableColumns([]);
         setSelectedClass('');
@@ -456,7 +456,7 @@ const AddStudentS = () => {
         }
       });
 
-      const response = await axios.post('https://excellence.oddag.et/api/students/add-student', formData, {
+      const response = await axios.post('https://school-management-system-daul.onrender.com/api/students/add-student', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
         timeout: 10000
       });

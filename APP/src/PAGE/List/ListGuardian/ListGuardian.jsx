@@ -32,7 +32,7 @@ const ListGuardian = () => {
   const fetchGuardians = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/guardian-list/guardians');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/guardian-list/guardians');
       setGuardians(response.data);
       setFilteredGuardians(response.data);
     } catch (error) {

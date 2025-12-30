@@ -1,7 +1,7 @@
 // Centralized API configuration
-export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://excellence.oddag.et/api';
-export const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'https://excellence.oddag.et';
-export const UPLOADS_URL = import.meta.env.VITE_UPLOADS_URL || 'https://excellence.oddag.et';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://school-management-system-daul.onrender.com/api';
+export const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'https://school-management-system-daul.onrender.com';
+export const UPLOADS_URL = import.meta.env.VITE_UPLOADS_URL || 'https://school-management-system-daul.onrender.com';
 
 // Helper function to get full URL for uploaded files
 export const getUploadUrl = (path) => {

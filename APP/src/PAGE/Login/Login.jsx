@@ -43,7 +43,7 @@ const Login = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('https://excellence.oddag.et/api/admin/login', credentials);
+      const response = await axios.post('https://school-management-system-daul.onrender.com/api/admin/login', credentials);
       
       if (response.data.message === 'Login successful' || response.data.success) {
         const user = response.data.user;

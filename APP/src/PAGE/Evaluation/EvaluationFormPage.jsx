@@ -19,7 +19,7 @@ const EvaluationFormPage = () => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluations` : 'https://excellence.oddag.et/api/evaluations';
+  const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluations` : 'https://school-management-system-daul.onrender.com/api/evaluations';
   
   const fetchEvaluationForm = useCallback(async ( ) => {
     try {

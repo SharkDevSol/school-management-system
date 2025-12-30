@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fi';
 import styles from './GuardianFeedbackView.module.css';
 
-const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://excellence.oddag.et/api/evaluation-book';
+const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://school-management-system-daul.onrender.com/api/evaluation-book';
 
 const GuardianFeedbackView = ({ teacherId }) => {
   const [evaluations, setEvaluations] = useState([]);

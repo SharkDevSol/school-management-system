@@ -17,7 +17,7 @@ const RespondForm = ({ isOpen, onClose, requestId, questions, onSubmit }) => {
     
     try {
       // Send response without token
-      const res = await axios.post(`https://excellence.oddag.et/api/chats/requests/${requestId}/respond`, { 
+      const res = await axios.post(`https://school-management-system-daul.onrender.com/api/chats/requests/${requestId}/respond`, { 
         responses: respArray 
       });
       onSubmit(res.data);

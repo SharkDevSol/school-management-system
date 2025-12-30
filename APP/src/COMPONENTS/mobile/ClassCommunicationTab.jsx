@@ -26,7 +26,7 @@ const ClassCommunicationTab = ({
     
     try {
       const response = await axios.get(
-        `https://excellence.oddag.et/api/class-communication/teacher-classes/${encodeURIComponent(userName)}`
+        `https://school-management-system-daul.onrender.com/api/class-communication/teacher-classes/${encodeURIComponent(userName)}`
       );
       setClasses(response.data.classes || []);
     } catch (error) {
@@ -47,7 +47,7 @@ const ClassCommunicationTab = ({
         ? `/api/class-communication/messages/${encodeURIComponent(className)}`
         : `/api/class-communication/student-messages/${encodeURIComponent(className)}`;
       
-      const response = await axios.get(`https://excellence.oddag.et${endpoint}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com${endpoint}`);
       setMessages(response.data.messages || []);
     } catch (error) {
       console.error('Error fetching messages:', error);
@@ -87,7 +87,7 @@ const ClassCommunicationTab = ({
     });
 
     const response = await axios.post(
-      'https://excellence.oddag.et/api/class-communication/messages',
+      'https://school-management-system-daul.onrender.com/api/class-communication/messages',
       formData,
       { headers: { 'Content-Type': 'multipart/form-data' } }
     );

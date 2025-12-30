@@ -45,11 +45,11 @@ const ListStaff = () => {
       
       for (const staffType of types) {
         try {
-          const classesResponse = await axios.get(`https://excellence.oddag.et/api/staff/classes?staffType=${encodeURIComponent(staffType)}`);
+          const classesResponse = await axios.get(`https://school-management-system-daul.onrender.com/api/staff/classes?staffType=${encodeURIComponent(staffType)}`);
           if (classesResponse.data.length > 0) foundTypes.push(staffType);
           
           for (const className of classesResponse.data) {
-            const dataResponse = await axios.get(`https://excellence.oddag.et/api/staff/data/${staffType}/${className}`);
+            const dataResponse = await axios.get(`https://school-management-system-daul.onrender.com/api/staff/data/${staffType}/${className}`);
             const staffWithMeta = dataResponse.data.data.map((staff, idx) => ({ 
               ...staff, 
               staffType, 

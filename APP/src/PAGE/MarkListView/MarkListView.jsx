@@ -23,7 +23,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useApp } from '../../context/AppContext';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://excellence.oddag.et/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://school-management-system-daul.onrender.com/api';
 
 const MarkListView = () => {
   const { t, theme } = useApp();

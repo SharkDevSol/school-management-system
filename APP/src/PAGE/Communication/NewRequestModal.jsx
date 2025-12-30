@@ -13,7 +13,7 @@ const NewRequestModal = ({ isOpen, onClose, onSubmit, recipientId, senderId }) =
     
     try {
       // Send request with sender ID
-      const res = await axios.post('https://excellence.oddag.et/api/chats/requests', { 
+      const res = await axios.post('https://school-management-system-daul.onrender.com/api/chats/requests', { 
         recipientId, 
         questions: qArray,
         senderId: senderId || 1 // Default to director if not provided

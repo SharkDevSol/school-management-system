@@ -37,7 +37,7 @@ const Post = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/posts/feed?role=staff');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/posts/feed?role=staff');
       setPosts(response.data);
     } catch (error) {
       console.error('Error fetching posts:', error);
@@ -95,7 +95,7 @@ const Post = () => {
 
     setUploading(true);
     try {
-      await axios.post('https://excellence.oddag.et/api/posts', data, {
+      await axios.post('https://school-management-system-daul.onrender.com/api/posts', data, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setIsCreating(false);
@@ -120,7 +120,7 @@ const Post = () => {
 
   const handleLike = async (postId) => {
     try {
-      await axios.put(`https://excellence.oddag.et/api/posts/${postId}/like`);
+      await axios.put(`https://school-management-system-daul.onrender.com/api/posts/${postId}/like`);
       setLikedPosts(prev => new Set([...prev, postId]));
       fetchPosts();
     } catch (error) {
@@ -159,7 +159,7 @@ const Post = () => {
             return (
               <div key={index} className={styles.mediaItem}>
                 <img 
-                  src={`https://excellence.oddag.et/Uploads/posts/${item.filename}`} 
+                  src={`https://school-management-system-daul.onrender.com/Uploads/posts/${item.filename}`} 
                   alt="Post media" 
                 />
                 {media.length > 4 && index === 3 && (
@@ -170,14 +170,14 @@ const Post = () => {
           } else if (item.mimetype?.startsWith('video/')) {
             return (
               <div key={index} className={styles.mediaItem}>
-                <video controls src={`https://excellence.oddag.et/Uploads/posts/${item.filename}`} />
+                <video controls src={`https://school-management-system-daul.onrender.com/Uploads/posts/${item.filename}`} />
               </div>
             );
           } else {
             return (
               <a 
                 key={index} 
-                href={`https://excellence.oddag.et/Uploads/posts/${item.filename}`} 
+                href={`https://school-management-system-daul.onrender.com/Uploads/posts/${item.filename}`} 
                 download 
                 className={styles.fileAttachment}
               >

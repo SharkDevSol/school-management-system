@@ -48,10 +48,10 @@ const ListStudent = () => {
 
   const fetchClasses = async () => {
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/student-list/classes');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/student-list/classes');
       setClasses(response.data);
       if (response.data.length > 0) setSelectedClass(response.data[0]);
-      const formRes = await axios.get('https://excellence.oddag.et/api/students/form-structure');
+      const formRes = await axios.get('https://school-management-system-daul.onrender.com/api/students/form-structure');
       setCustomFields(formRes.data?.customFields || []);
     } catch (error) { console.error('Error:', error); }
   };
@@ -59,7 +59,7 @@ const ListStudent = () => {
   const fetchStudents = async (className) => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/student-list/students/${className}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/student-list/students/${className}`);
       const studentsWithIds = response.data.map((student, index) => ({
         ...student, uniqueId: `${student.student_name}-${index}-${Date.now()}`, displayId: index + 1
       }));
@@ -114,7 +114,7 @@ const ListStudent = () => {
     if (!window.confirm(`Delete ${student.student_name}?`)) return;
     try {
       if (student.school_id && student.class_id) {
-        await axios.delete(`https://excellence.oddag.et/api/student-list/student/${selectedClass}/${student.school_id}/${student.class_id}`);
+        await axios.delete(`https://school-management-system-daul.onrender.com/api/student-list/student/${selectedClass}/${student.school_id}/${student.class_id}`);
       }
       setStudents(prev => prev.filter(s => s.uniqueId !== student.uniqueId));
     } catch (error) { alert('Failed to delete'); }
@@ -161,7 +161,7 @@ const ListStudent = () => {
           if (!['uniqueId', 'displayId', 'id'].includes(key) && value != null) formData.append(key, value.toString());
         });
         if (editFile) formData.append('image_student', editFile);
-        await axios.put(`https://excellence.oddag.et/api/student-list/student/${selectedClass}/${selectedStudent.school_id}/${selectedStudent.class_id}`, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+        await axios.put(`https://school-management-system-daul.onrender.com/api/student-list/student/${selectedClass}/${selectedStudent.school_id}/${selectedStudent.class_id}`, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
       }
       setStudents(prev => prev.map(s => s.uniqueId === selectedStudent.uniqueId ? { ...editFormData, uniqueId: s.uniqueId, displayId: s.displayId } : s));
       setShowEditModal(false);

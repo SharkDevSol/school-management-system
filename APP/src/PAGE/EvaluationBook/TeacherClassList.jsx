@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FiUsers, FiChevronRight, FiClipboard, FiAlertCircle, FiRefreshCw } from 'react-icons/fi';
 import styles from './TeacherClassList.module.css';
 
-const API_BASE = 'https://excellence.oddag.et/api/evaluation-book';
+const API_BASE = 'https://school-management-system-daul.onrender.com/api/evaluation-book';
 
 const TeacherClassList = () => {
   const navigate = useNavigate();

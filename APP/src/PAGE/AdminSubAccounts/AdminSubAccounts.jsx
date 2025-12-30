@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PermissionSelector from '../../COMPONENTS/PermissionSelector';
 import { useApp } from '../../context/AppContext';
 
-const API_BASE = 'https://excellence.oddag.et/api/admin/sub-accounts';
+const API_BASE = 'https://school-management-system-daul.onrender.com/api/admin/sub-accounts';
 
 const AdminSubAccounts = () => {
   const { t } = useApp();

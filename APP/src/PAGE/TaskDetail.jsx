@@ -139,7 +139,7 @@ function TaskDetail() {
       
       // Also save academic year to branding settings
       const academicYearStr = `${year}-${year + 1}`;
-      await axios.put('https://excellence.oddag.et/api/admin/branding', {
+      await axios.put('https://school-management-system-daul.onrender.com/api/admin/branding', {
         academic_year: academicYearStr
       });
       
@@ -165,7 +165,7 @@ function TaskDetail() {
     if (taskId === '1') {
       const loadAcademicYear = async () => {
         try {
-          const response = await axios.get('https://excellence.oddag.et/api/admin/branding');
+          const response = await axios.get('https://school-management-system-daul.onrender.com/api/admin/branding');
           if (response.data.academic_year) {
             setAcademicYear(response.data.academic_year);
             // Parse year from academic year string (e.g., "2024-2025" -> 2024)

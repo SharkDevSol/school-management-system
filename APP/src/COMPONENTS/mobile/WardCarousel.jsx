@@ -27,7 +27,7 @@ const WardCarousel = ({ wards, onWardSelect, selectedWardId }) => {
             <div className={styles.wardHeader}>
               {ward.image_student ? (
                 <img
-                  src={`https://excellence.oddag.et/Uploads/${ward.image_student}`}
+                  src={`https://school-management-system-daul.onrender.com/Uploads/${ward.image_student}`}
                   alt={`${ward.student_name}'s profile`}
                   className={styles.wardAvatar}
                 />

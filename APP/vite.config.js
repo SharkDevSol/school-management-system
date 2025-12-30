@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://excellence.oddag.et', 
+        target: 'https://school-management-system-daul.onrender.com', 
         changeOrigin: true,
         rewrite: (path) => path
       }

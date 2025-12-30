@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fi';
 import styles from './EvaluationBookFormBuilder.module.css';
 
-const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://excellence.oddag.et/api/evaluation-book';
+const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://school-management-system-daul.onrender.com/api/evaluation-book';
 
 const FIELD_TYPES = [
   { value: 'text', label: 'Text Input', icon: FiType },

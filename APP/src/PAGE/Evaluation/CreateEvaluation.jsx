@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FiSave, FiX, FiPlus, FiTrash2, FiAlertCircle, FiClipboard, FiUsers, FiUser, FiBook, FiCalendar } from 'react-icons/fi';
 import styles from './CreateEvaluation.module.css'; // We will create this CSS file next
 
-const API_BASE = 'https://excellence.oddag.et/api/evaluations';
+const API_BASE = 'https://school-management-system-daul.onrender.com/api/evaluations';
 
 const CreateEvaluation = ({ evaluationId, onEvaluationCreated, onCancel } ) => {
   const [formData, setFormData] = useState({

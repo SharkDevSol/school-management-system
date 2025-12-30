@@ -87,7 +87,7 @@ const StudentFaultsS = () => {
       setIsLoading(true);
       try {
         console.log('Fetching classes from /api/faults/classes');
-        const response = await axios.get('https://excellence.oddag.et/api/faults/classes');
+        const response = await axios.get('https://school-management-system-daul.onrender.com/api/faults/classes');
         console.log('Classes fetched:', response.data);
         setClasses(response.data);
       } catch (error) {
@@ -102,7 +102,7 @@ const StudentFaultsS = () => {
       setIsLoading(true);
       try {
         console.log('Fetching reports from /api/faults/reports');
-        const response = await axios.get('https://excellence.oddag.et/api/faults/reports');
+        const response = await axios.get('https://school-management-system-daul.onrender.com/api/faults/reports');
         console.log('Reports fetched:', response.data);
         setReports(response.data);
       } catch (error) {
@@ -125,12 +125,12 @@ const StudentFaultsS = () => {
     setIsLoading(true);
     try {
       console.log(`Fetching students for class: ${className}`);
-      const studentsResponse = await axios.get(`https://excellence.oddag.et/api/faults/students/${className}`);
+      const studentsResponse = await axios.get(`https://school-management-system-daul.onrender.com/api/faults/students/${className}`);
       console.log(`Students fetched for ${className}:`, studentsResponse.data);
       setStudents(studentsResponse.data);
 
       console.log(`Fetching faults for class: ${className}`);
-      const faultsResponse = await axios.get(`https://excellence.oddag.et/api/faults/faults/${className}`);
+      const faultsResponse = await axios.get(`https://school-management-system-daul.onrender.com/api/faults/faults/${className}`);
       console.log(`Faults fetched for ${className}:`, faultsResponse.data);
       setFaults(faultsResponse.data);
     } catch (error) {
@@ -196,7 +196,7 @@ const StudentFaultsS = () => {
       }
 
       console.log(`Submitting fault for ${formData.student_name} in class ${selectedClass}`);
-      const response = await axios.post('https://excellence.oddag.et/api/faults/add-fault', formDataToSend, {
+      const response = await axios.post('https://school-management-system-daul.onrender.com/api/faults/add-fault', formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       console.log('Fault added:', response.data);
@@ -213,7 +213,7 @@ const StudentFaultsS = () => {
         attachment: null,
       });
       // Refresh reports
-      const reportsResponse = await axios.get('https://excellence.oddag.et/api/faults/reports');
+      const reportsResponse = await axios.get('https://school-management-system-daul.onrender.com/api/faults/reports');
       setReports(reportsResponse.data);
     } catch (error) {
       console.error('Error adding fault:', error);
@@ -257,7 +257,7 @@ const StudentFaultsS = () => {
 
       console.log(`Updating fault ID ${selectedFault.id} in class ${selectedClass}`);
       const response = await axios.put(
-        `https://excellence.oddag.et/api/faults/edit-fault/${selectedClass}/${selectedFault.id}`,
+        `https://school-management-system-daul.onrender.com/api/faults/edit-fault/${selectedClass}/${selectedFault.id}`,
         formDataToSend,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
@@ -266,7 +266,7 @@ const StudentFaultsS = () => {
       setIsEditModalVisible(false);
       handleClassSelect(selectedClass); // Refresh faults
       // Refresh reports
-      const reportsResponse = await axios.get('https://excellence.oddag.et/api/faults/reports');
+      const reportsResponse = await axios.get('https://school-management-system-daul.onrender.com/api/faults/reports');
       setReports(reportsResponse.data);
     } catch (error) {
       console.error('Error updating fault:', error);
@@ -280,12 +280,12 @@ const StudentFaultsS = () => {
     setIsLoading(true);
     try {
       console.log(`Deleting fault ID ${faultId} in class ${selectedClass}`);
-      const response = await axios.delete(`https://excellence.oddag.et/api/faults/delete-fault/${selectedClass}/${faultId}`);
+      const response = await axios.delete(`https://school-management-system-daul.onrender.com/api/faults/delete-fault/${selectedClass}/${faultId}`);
       console.log('Fault deleted:', response.data);
       message.success('Fault deleted successfully');
       handleClassSelect(selectedClass); // Refresh faults
       // Refresh reports
-      const reportsResponse = await axios.get('https://excellence.oddag.et/api/faults/reports');
+      const reportsResponse = await axios.get('https://school-management-system-daul.onrender.com/api/faults/reports');
       setReports(reportsResponse.data);
     } catch (error) {
       console.error('Error deleting fault:', error);

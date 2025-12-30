@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 import jsPDF from 'jspdf';
 import { useApp } from '../../../context/AppContext';
 
-const API_BASE_URL = 'https://excellence.oddag.et/api';
+const API_BASE_URL = 'https://school-management-system-daul.onrender.com/api';
 
 // Design Templates
 const DESIGNS = [
@@ -69,7 +69,7 @@ const ReportCard = () => {
           phone: branding.school_phone || '',
           email: branding.school_email || '',
           academicYear: branding.academic_year || '',
-          logo: branding.school_logo ? `https://excellence.oddag.et/uploads/branding/${branding.school_logo}` : null
+          logo: branding.school_logo ? `https://school-management-system-daul.onrender.com/uploads/branding/${branding.school_logo}` : null
         });
       } catch (error) {
         console.error('Error fetching initial data:', error);

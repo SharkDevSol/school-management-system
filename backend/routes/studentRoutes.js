@@ -17,7 +17,7 @@ const { uploadLimiter } = require('../middleware/rateLimiter');
 // Enable CORS for all routes in this router
 router.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_URL || 'https://excellence.oddag.et'
+    ? process.env.FRONTEND_URL || 'https://school-management-system-daul.onrender.com'
     : 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],

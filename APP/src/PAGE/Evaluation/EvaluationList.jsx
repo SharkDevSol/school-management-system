@@ -32,7 +32,7 @@ const EvaluationList = ({ onCreateNew, onViewEvaluation, onEditEvaluation, onOpe
   const [subjects, setSubjects] = useState([]);
   const [classes, setClasses] = useState([]);
   
-  const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluations` : 'https://excellence.oddag.et/api/evaluations';
+  const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluations` : 'https://school-management-system-daul.onrender.com/api/evaluations';
   
   const fetchEvaluations = useCallback(async ( ) => {
     try {

@@ -1933,7 +1933,7 @@ export const AppProvider = ({ children }) => {
 
       // Then load branding from database (this overrides localStorage)
       try {
-        const response = await axios.get('https://excellence.oddag.et/api/admin/branding');
+        const response = await axios.get('https://school-management-system-daul.onrender.com/api/admin/branding');
         const data = response.data;
         
         // Update website name from database
@@ -1956,7 +1956,7 @@ export const AppProvider = ({ children }) => {
         
         // Update favicon from database
         if (data.website_icon) {
-          const iconUrl = `https://excellence.oddag.et/uploads/branding/${data.website_icon}`;
+          const iconUrl = `https://school-management-system-daul.onrender.com/uploads/branding/${data.website_icon}`;
           const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
           link.type = 'image/x-icon';
           link.rel = 'shortcut icon';

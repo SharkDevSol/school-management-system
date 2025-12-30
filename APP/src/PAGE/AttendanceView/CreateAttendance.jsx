@@ -49,7 +49,7 @@ const CreateAttendance = () => {
 
   const fetchClasses = async () => {
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/class-teacher/classes');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/class-teacher/classes');
       setClasses(response.data);
       if (response.data.length > 0) setSelectedClass(response.data[0]);
     } catch (error) {
@@ -59,14 +59,14 @@ const CreateAttendance = () => {
 
   const fetchSchoolDays = async () => {
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/class-teacher/school-days');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/class-teacher/school-days');
       if (response.data.schoolDays) setSchoolDays(response.data.schoolDays);
     } catch (error) { console.error('Error fetching school days:', error); }
   };
 
   const fetchWeeklyTables = async () => {
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/class-teacher/weekly-tables/${selectedClass}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/class-teacher/weekly-tables/${selectedClass}`);
       setWeeklyTables(response.data);
     } catch (error) { setWeeklyTables([]); }
   };
@@ -80,7 +80,7 @@ const CreateAttendance = () => {
     setLoading(true);
     setMessage({ type: '', text: '' });
     try {
-      const response = await axios.post('https://excellence.oddag.et/api/admin-attendance/create-weekly', {
+      const response = await axios.post('https://school-management-system-daul.onrender.com/api/admin-attendance/create-weekly', {
         className: selectedClass,
         weekStart: weekStart
       });
@@ -98,7 +98,7 @@ const CreateAttendance = () => {
     if (!selectedClass || !week) return;
     setLoading(true);
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/class-teacher/weekly-attendance/${selectedClass}/${week}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/class-teacher/weekly-attendance/${selectedClass}/${week}`);
       if (response.data.exists) setAttendanceData(response.data.data);
       else setAttendanceData([]);
     } catch (error) { setAttendanceData([]); }
@@ -130,7 +130,7 @@ const CreateAttendance = () => {
     setMessage({ type: '', text: '' });
     try {
       const response = await axios.put(
-        `https://excellence.oddag.et/api/admin-attendance/update-weekly/${selectedClass}/${selectedWeek}`,
+        `https://school-management-system-daul.onrender.com/api/admin-attendance/update-weekly/${selectedClass}/${selectedWeek}`,
         { records: attendanceData }
       );
       setMessage({ type: 'success', text: response.data.message });

@@ -18,7 +18,7 @@ const StudentLogin = () => {
     setError('');
 
     try {
-      const response = await axios.post('https://excellence.oddag.et/api/students/login', {
+      const response = await axios.post('https://school-management-system-daul.onrender.com/api/students/login', {
         username,
         password,
       });

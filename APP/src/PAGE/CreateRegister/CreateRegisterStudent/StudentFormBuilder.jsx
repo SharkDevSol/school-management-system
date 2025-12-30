@@ -154,7 +154,7 @@ const StudentFormBuilder = ({ onSuccess }) => {
     setIsLoading(true);
     setErrorMessage('');
     try {
-      await axios.post('https://excellence.oddag.et/api/students/create-form', {
+      await axios.post('https://school-management-system-daul.onrender.com/api/students/create-form', {
         classCount,
         classes,
         customFields

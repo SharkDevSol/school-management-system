@@ -26,9 +26,9 @@ const ClassTeacherAssignment = () => {
     setLoading(true);
     try {
       const [teachersRes, classesRes, assignmentsRes] = await Promise.all([
-        axios.get('https://excellence.oddag.et/api/class-teacher/teachers'),
-        axios.get('https://excellence.oddag.et/api/class-teacher/classes'),
-        axios.get('https://excellence.oddag.et/api/class-teacher/assignments')
+        axios.get('https://school-management-system-daul.onrender.com/api/class-teacher/teachers'),
+        axios.get('https://school-management-system-daul.onrender.com/api/class-teacher/classes'),
+        axios.get('https://school-management-system-daul.onrender.com/api/class-teacher/assignments')
       ]);
       setTeachers(teachersRes.data);
       setClasses(classesRes.data);
@@ -54,7 +54,7 @@ const ClassTeacherAssignment = () => {
     }
 
     try {
-      await axios.post('https://excellence.oddag.et/api/class-teacher/assign', {
+      await axios.post('https://school-management-system-daul.onrender.com/api/class-teacher/assign', {
         global_staff_id: parseInt(selectedTeacher),
         teacher_name: teacher.teacher_name,
         assigned_class: selectedClass
@@ -74,7 +74,7 @@ const ClassTeacherAssignment = () => {
     if (!window.confirm(`Remove class teacher from ${className}?`)) return;
 
     try {
-      await axios.delete(`https://excellence.oddag.et/api/class-teacher/unassign/${className}`);
+      await axios.delete(`https://school-management-system-daul.onrender.com/api/class-teacher/unassign/${className}`);
       setMessage({ type: 'success', text: `Teacher unassigned from ${className}` });
       fetchData();
     } catch (error) {

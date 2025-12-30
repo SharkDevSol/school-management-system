@@ -7,7 +7,7 @@ import {
 import { useApp } from '../../context/AppContext';
 import styles from './EvaluationBookReports.module.css';
 
-const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://excellence.oddag.et/api/evaluation-book';
+const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://school-management-system-daul.onrender.com/api/evaluation-book';
 
 const EvaluationBookReports = () => {
   const { t } = useApp();

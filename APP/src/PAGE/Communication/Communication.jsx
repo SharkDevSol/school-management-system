@@ -33,7 +33,7 @@ const Communication = ({ activeChatId, userId, requests = [] }) => {
       return;
     }
 
-    socket.current = io('https://excellence.oddag.et');
+    socket.current = io('https://school-management-system-daul.onrender.com');
     socket.current.emit('join', actualUserId.toString());
 
     socket.current.on('new_request', (request) => {

@@ -45,7 +45,7 @@ const StaffAttendance = () => {
 
       // Check if this staff is a class teacher
       const response = await axios.get(
-        `https://excellence.oddag.et/api/class-teacher/check/${staff.global_staff_id}`
+        `https://school-management-system-daul.onrender.com/api/class-teacher/check/${staff.global_staff_id}`
       );
 
       setIsClassTeacher(response.data.isClassTeacher);
@@ -63,7 +63,7 @@ const StaffAttendance = () => {
     
     try {
       const response = await axios.get(
-        `https://excellence.oddag.et/api/class-teacher/students/${assignedClass}`
+        `https://school-management-system-daul.onrender.com/api/class-teacher/students/${assignedClass}`
       );
       setStudents(response.data);
       
@@ -93,7 +93,7 @@ const StaffAttendance = () => {
     
     try {
       const response = await axios.get(
-        `https://excellence.oddag.et/api/class-teacher/attendance/${assignedClass}/${selectedDate}`
+        `https://school-management-system-daul.onrender.com/api/class-teacher/attendance/${assignedClass}/${selectedDate}`
       );
       
       if (response.data.length > 0) {
@@ -157,7 +157,7 @@ const StaffAttendance = () => {
     try {
       const records = Object.values(attendanceRecords);
       
-      await axios.post('https://excellence.oddag.et/api/class-teacher/mark-attendance', {
+      await axios.post('https://school-management-system-daul.onrender.com/api/class-teacher/mark-attendance', {
         className: assignedClass,
         date: selectedDate,
         records,
@@ -304,7 +304,7 @@ const StaffAttendance = () => {
                   <span className={styles.studentNum}>{idx + 1}</span>
                   <div className={styles.studentAvatar}>
                     {student.image_student ? (
-                      <img src={`https://excellence.oddag.et/Uploads/${student.image_student}`} alt="" />
+                      <img src={`https://school-management-system-daul.onrender.com/Uploads/${student.image_student}`} alt="" />
                     ) : (
                       <FiUsers />
                     )}

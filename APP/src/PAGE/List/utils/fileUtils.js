@@ -127,11 +127,11 @@ export const getFileUrl = (filename, type = 'staff') => {
   
   // If already a full path starting with /uploads or /Uploads (case-insensitive)
   if (filename.toLowerCase().startsWith('/uploads')) {
-    return `https://excellence.oddag.et${filename}`;
+    return `https://school-management-system-daul.onrender.com${filename}`;
   }
   
   // Default to Uploads folder (matching backend storage)
-  return `https://excellence.oddag.et/Uploads/${filename}`;
+  return `https://school-management-system-daul.onrender.com/Uploads/${filename}`;
 };
 
 /**

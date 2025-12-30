@@ -33,7 +33,7 @@ const CreateRegisterStaff = () => {
   const fetchClasses = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/staff/classes?staffType=${encodeURIComponent(staffType)}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/staff/classes?staffType=${encodeURIComponent(staffType)}`);
       setClasses(response.data);
       setMessage({ type: '', text: '' });
     } catch (error) {
@@ -55,7 +55,7 @@ const CreateRegisterStaff = () => {
     
     setLoading(true);
     try {
-      await axios.delete('https://excellence.oddag.et/api/staff/delete-form', {
+      await axios.delete('https://school-management-system-daul.onrender.com/api/staff/delete-form', {
         data: { staffType, className: cls }
       });
       setMessage({ type: 'success', text: 'Form deleted successfully' });

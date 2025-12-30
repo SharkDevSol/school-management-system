@@ -4,7 +4,7 @@ import { FiPlus, FiTrash2, FiUsers, FiUser, FiCheck, FiAlertCircle, FiSearch } f
 import { useApp } from '../../context/AppContext';
 import styles from './TeacherAssignmentManager.module.css';
 
-const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://excellence.oddag.et/api/evaluation-book';
+const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/evaluation-book` : 'https://school-management-system-daul.onrender.com/api/evaluation-book';
 
 const TeacherAssignmentManager = () => {
   const { t } = useApp();

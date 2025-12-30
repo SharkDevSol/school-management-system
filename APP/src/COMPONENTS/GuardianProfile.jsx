@@ -64,14 +64,14 @@ const GuardianProfile = () => {
   const fetchProfile = useCallback(async () => {
     try {
       // First verify guardian role
-      const response = await axios.get(`https://excellence.oddag.et/api/students/guardian-profile/${username}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/students/guardian-profile/${username}`);
       if (response.data.role !== 'guardian') {
         setError('This page is for guardians only.');
         return;
       }
       
       // Fetch all guardians with associated students (same as ListGuardian)
-      const guardiansResponse = await axios.get('https://excellence.oddag.et/api/guardian-list/guardians');
+      const guardiansResponse = await axios.get('https://school-management-system-daul.onrender.com/api/guardian-list/guardians');
       const currentGuardian = guardiansResponse.data.find(
         guardian => guardian.guardian_username === username
       );
@@ -106,7 +106,7 @@ const GuardianProfile = () => {
 
   const fetchProfilePosts = useCallback(async (schoolId) => {
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/posts/profile/guardian/${schoolId}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/posts/profile/guardian/${schoolId}`);
       setProfilePosts(response.data.map(post => ({ ...post, localLikes: post.likes || 0 })));
     } catch (err) {
       console.error('Error fetching profile posts:', err);
@@ -134,7 +134,7 @@ const GuardianProfile = () => {
     setMarksLoading(true);
     try {
       const response = await axios.get(
-        `https://excellence.oddag.et/api/mark-list/student-marks/${ward.school_id}/${encodeURIComponent(ward.class)}`
+        `https://school-management-system-daul.onrender.com/api/mark-list/student-marks/${ward.school_id}/${encodeURIComponent(ward.class)}`
       );
       setWardMarks(prev => ({
         ...prev,
@@ -187,7 +187,7 @@ const GuardianProfile = () => {
     try {
       const className = ward.class.replace(/\s+/g, '_');
       const response = await axios.get(
-        `https://excellence.oddag.et/api/guardian-attendance/tables/${encodeURIComponent(className)}`
+        `https://school-management-system-daul.onrender.com/api/guardian-attendance/tables/${encodeURIComponent(className)}`
       );
       setAttendanceTables(response.data || []);
       if (response.data && response.data.length > 0) {
@@ -211,7 +211,7 @@ const GuardianProfile = () => {
     try {
       const className = ward.class.replace(/\s+/g, '_');
       const response = await axios.get(
-        `https://excellence.oddag.et/api/guardian-attendance/student/${encodeURIComponent(className)}/${encodeURIComponent(tableName)}/${ward.school_id}`
+        `https://school-management-system-daul.onrender.com/api/guardian-attendance/student/${encodeURIComponent(className)}/${encodeURIComponent(tableName)}/${ward.school_id}`
       );
       setWardAttendance(prev => ({
         ...prev,
@@ -256,7 +256,7 @@ const GuardianProfile = () => {
     try {
       // First try fetching by guardian_id
       const response = await axios.get(
-        `https://excellence.oddag.et/api/evaluation-book/daily/guardian/${encodeURIComponent(guardianId)}`
+        `https://school-management-system-daul.onrender.com/api/evaluation-book/daily/guardian/${encodeURIComponent(guardianId)}`
       );
       let evaluations = response.data || [];
       
@@ -268,7 +268,7 @@ const GuardianProfile = () => {
           if (ward.class && ward.student_name) {
             try {
               const classResponse = await axios.get(
-                `https://excellence.oddag.et/api/evaluation-book/daily/class/${encodeURIComponent(ward.class)}`
+                `https://school-management-system-daul.onrender.com/api/evaluation-book/daily/class/${encodeURIComponent(ward.class)}`
               );
               const wardEvals = (classResponse.data || []).filter(
                 e => e.student_name === ward.student_name
@@ -316,7 +316,7 @@ const GuardianProfile = () => {
     }
     setFeedbackSaving(true);
     try {
-      await axios.post('https://excellence.oddag.et/api/evaluation-book/feedback', {
+      await axios.post('https://school-management-system-daul.onrender.com/api/evaluation-book/feedback', {
         daily_evaluation_id: selectedEvaluation.id,
         guardian_id: guardianInfo?.guardian_username,
         feedback_text: feedbackText.trim()
@@ -356,7 +356,7 @@ const GuardianProfile = () => {
 
   const handleLike = async (postId) => {
     try {
-      await axios.put(`https://excellence.oddag.et/api/posts/${postId}/like`);
+      await axios.put(`https://school-management-system-daul.onrender.com/api/posts/${postId}/like`);
       setProfilePosts(prev =>
         prev.map(post =>
           post.id === postId
@@ -409,7 +409,7 @@ const GuardianProfile = () => {
             const getImageUrl = (imagePath) => {
               if (!imagePath) return null;
               const cleanPath = imagePath.replace(/^\/?(uploads|Uploads)\//i, '');
-              return `https://excellence.oddag.et/uploads/${cleanPath}`;
+              return `https://school-management-system-daul.onrender.com/uploads/${cleanPath}`;
             };
             
             return (

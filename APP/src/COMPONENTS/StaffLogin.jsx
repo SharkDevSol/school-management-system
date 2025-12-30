@@ -32,7 +32,7 @@ const StaffLogin = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('https://excellence.oddag.et/api/staff/login', credentials);
+      const response = await axios.post('https://school-management-system-daul.onrender.com/api/staff/login', credentials);
       
       if (response.data.message === 'Login successful') {
         // Store JWT token for API authentication

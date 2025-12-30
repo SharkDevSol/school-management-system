@@ -100,7 +100,7 @@ const PostCard = ({ post, onLike }) => {
       <div className={styles.mediaContainer} onDoubleClick={handleDoubleTap}>
         <div className={styles.mediaSlider} style={{ transform: `translateX(-${imageIndex * 100}%)` }}>
           {mediaItems.map((m, idx) => {
-            const mediaUrl = `https://excellence.oddag.et/Uploads/posts/${m.filename}`;
+            const mediaUrl = `https://school-management-system-daul.onrender.com/Uploads/posts/${m.filename}`;
             
             if (m.mimetype?.startsWith('image/')) {
               return (
@@ -164,7 +164,7 @@ const PostCard = ({ post, onLike }) => {
     return (
       <div className={styles.attachments}>
         {files.map((m, idx) => {
-          const mediaUrl = `https://excellence.oddag.et/Uploads/posts/${m.filename}`;
+          const mediaUrl = `https://school-management-system-daul.onrender.com/Uploads/posts/${m.filename}`;
           return (
             <a key={idx} href={mediaUrl} download className={styles.attachmentLink}>
               <FiDownload />

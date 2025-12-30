@@ -58,14 +58,14 @@ const Setting = () => {
   
   const loadBrandingSettings = async () => {
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/admin/branding');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/admin/branding');
       const data = response.data;
       
       setLocalWebsiteName(data.website_name || 'School Management System');
       updateWebsiteName(data.website_name || 'School Management System');
       
       if (data.website_icon) {
-        const iconUrl = `https://excellence.oddag.et/uploads/branding/${data.website_icon}`;
+        const iconUrl = `https://school-management-system-daul.onrender.com/uploads/branding/${data.website_icon}`;
         setWebIcon(data.website_icon);
         setWebIconUrl(iconUrl);
         
@@ -86,7 +86,7 @@ const Setting = () => {
       });
       
       if (data.school_logo) {
-        const logoUrl = `https://excellence.oddag.et/uploads/branding/${data.school_logo}`;
+        const logoUrl = `https://school-management-system-daul.onrender.com/uploads/branding/${data.school_logo}`;
         setSchoolLogo(data.school_logo);
         setSchoolLogoUrl(logoUrl);
       }
@@ -241,7 +241,7 @@ const Setting = () => {
   const saveWebsiteName = async () => {
     setLoading(true);
     try {
-      await axios.put('https://excellence.oddag.et/api/admin/branding', {
+      await axios.put('https://school-management-system-daul.onrender.com/api/admin/branding', {
         website_name: localWebsiteName
       });
       
@@ -266,7 +266,7 @@ const Setting = () => {
   const saveSchoolInfo = async () => {
     setLoading(true);
     try {
-      await axios.put('https://excellence.oddag.et/api/admin/branding', {
+      await axios.put('https://school-management-system-daul.onrender.com/api/admin/branding', {
         school_address: schoolInfo.address,
         school_phone: schoolInfo.phone,
         school_email: schoolInfo.email
@@ -289,11 +289,11 @@ const Setting = () => {
         const formData = new FormData();
         formData.append('logo', file);
         
-        const response = await axios.post('https://excellence.oddag.et/api/admin/branding/logo', formData, {
+        const response = await axios.post('https://school-management-system-daul.onrender.com/api/admin/branding/logo', formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         
-        const logoUrl = `https://excellence.oddag.et${response.data.logoUrl}`;
+        const logoUrl = `https://school-management-system-daul.onrender.com${response.data.logoUrl}`;
         setSchoolLogo(response.data.logo);
         setSchoolLogoUrl(logoUrl);
         
@@ -316,11 +316,11 @@ const Setting = () => {
         const formData = new FormData();
         formData.append('icon', file);
         
-        const response = await axios.post('https://excellence.oddag.et/api/admin/branding/icon', formData, {
+        const response = await axios.post('https://school-management-system-daul.onrender.com/api/admin/branding/icon', formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         
-        const iconUrl = `https://excellence.oddag.et${response.data.iconUrl}`;
+        const iconUrl = `https://school-management-system-daul.onrender.com${response.data.iconUrl}`;
         setWebIcon(response.data.icon);
         setWebIconUrl(iconUrl);
         
@@ -344,7 +344,7 @@ const Setting = () => {
   // Save theme to database
   const saveThemeToDatabase = async () => {
     try {
-      await axios.put('https://excellence.oddag.et/api/admin/branding', {
+      await axios.put('https://school-management-system-daul.onrender.com/api/admin/branding', {
         primary_color: localTheme.primaryColor,
         secondary_color: localTheme.secondaryColor,
         theme_mode: localTheme.mode

@@ -202,7 +202,7 @@ const StaffProfile = () => {
   // Check if staff is a class teacher
   const checkClassTeacherStatus = async (globalStaffId, profileName) => {
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/class-teacher/check/${globalStaffId}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/class-teacher/check/${globalStaffId}`);
       setIsClassTeacher(response.data.isClassTeacher);
       setAssignedClass(response.data.assignedClass);
       if (response.data.isClassTeacher && response.data.assignedClass) {
@@ -224,7 +224,7 @@ const StaffProfile = () => {
     if (!teacherName) return;
     setScheduleLoading(true);
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/schedule/schedule-by-teacher');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/schedule/schedule-by-teacher');
       const allSchedules = response.data;
       
       // Find this teacher's schedule
@@ -247,7 +247,7 @@ const StaffProfile = () => {
     if (!teacherName) return;
     setMarkListLoading(true);
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/mark-list/teacher-mark-lists/${encodeURIComponent(teacherName)}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/mark-list/teacher-mark-lists/${encodeURIComponent(teacherName)}`);
       setTeacherAssignments(response.data.assignments || []);
     } catch (error) {
       console.error('Error fetching teacher mark lists:', error);
@@ -262,7 +262,7 @@ const StaffProfile = () => {
     if (!globalStaffId) return;
     setEvalBookLoading(true);
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/evaluation-book/assignments/teacher/${globalStaffId}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/evaluation-book/assignments/teacher/${globalStaffId}`);
       const assignments = response.data || [];
       setEvalBookAssignments(assignments);
       setHasEvalBookAccess(assignments.length > 0);
@@ -287,14 +287,14 @@ const StaffProfile = () => {
     try {
       // Fetch class data with students and template
       const response = await axios.get(
-        `https://excellence.oddag.et/api/evaluation-book/teacher/${profile.global_staff_id}/class/${encodeURIComponent(className)}`
+        `https://school-management-system-daul.onrender.com/api/evaluation-book/teacher/${profile.global_staff_id}/class/${encodeURIComponent(className)}`
       );
       const data = response.data;
       setEvalStudents(data.students || []);
       
       if (data.template) {
         // Fetch full template with fields
-        const templateRes = await axios.get(`https://excellence.oddag.et/api/evaluation-book/templates/${data.template.id}`);
+        const templateRes = await axios.get(`https://school-management-system-daul.onrender.com/api/evaluation-book/templates/${data.template.id}`);
         setEvalTemplate(templateRes.data);
       }
       
@@ -340,7 +340,7 @@ const StaffProfile = () => {
         field_values: evalEntries[student.student_name]?.field_values || {}
       }));
       
-      const response = await axios.post('https://excellence.oddag.et/api/evaluation-book/daily', {
+      const response = await axios.post('https://school-management-system-daul.onrender.com/api/evaluation-book/daily', {
         template_id: evalTemplate.id,
         teacher_global_id: profile.global_staff_id,
         class_name: selectedEvalClass,
@@ -350,7 +350,7 @@ const StaffProfile = () => {
       
       if (sendToGuardians && response.data?.length > 0) {
         const evalIds = response.data.map(e => e.id);
-        await axios.post('https://excellence.oddag.et/api/evaluation-book/daily/send', {
+        await axios.post('https://school-management-system-daul.onrender.com/api/evaluation-book/daily/send', {
           evaluation_ids: evalIds
         });
         setEvalFormSuccess('Evaluations saved and sent to guardians!');
@@ -385,7 +385,7 @@ const StaffProfile = () => {
     setEvalReportsLoading(true);
     try {
       const response = await axios.get(
-        `https://excellence.oddag.et/api/evaluation-book/reports/teacher/${profile.global_staff_id}`
+        `https://school-management-system-daul.onrender.com/api/evaluation-book/reports/teacher/${profile.global_staff_id}`
       );
       setEvalReports(response.data?.entries || []);
     } catch (error) {
@@ -435,7 +435,7 @@ const StaffProfile = () => {
     setMarkListMessage('');
     try {
       const response = await axios.get(
-        `https://excellence.oddag.et/api/mark-list/mark-list/${encodeURIComponent(selectedMarkListSubject)}/${encodeURIComponent(selectedMarkListClass)}/${selectedMarkListTerm}`
+        `https://school-management-system-daul.onrender.com/api/mark-list/mark-list/${encodeURIComponent(selectedMarkListSubject)}/${encodeURIComponent(selectedMarkListClass)}/${selectedMarkListTerm}`
       );
       setMarkListData(response.data.markList || []);
       setMarkListConfig(response.data.config || null);
@@ -472,7 +472,7 @@ const StaffProfile = () => {
         marks[componentKey] = student[componentKey] || 0;
       });
 
-      const response = await axios.put('https://excellence.oddag.et/api/mark-list/update-marks', {
+      const response = await axios.put('https://school-management-system-daul.onrender.com/api/mark-list/update-marks', {
         subjectName: selectedMarkListSubject,
         className: selectedMarkListClass,
         termNumber: selectedMarkListTerm,
@@ -512,7 +512,7 @@ const StaffProfile = () => {
   // Fetch school days from schedule config
   const fetchSchoolDays = async () => {
     try {
-      const response = await axios.get('https://excellence.oddag.et/api/class-teacher/school-days');
+      const response = await axios.get('https://school-management-system-daul.onrender.com/api/class-teacher/school-days');
       if (response.data.schoolDays && response.data.schoolDays.length > 0) {
         setSchoolDays(response.data.schoolDays);
         setSelectedDay(response.data.schoolDays[0]); // Set first school day as default
@@ -528,7 +528,7 @@ const StaffProfile = () => {
   const fetchStudentsForAttendance = async (className) => {
     setAttendanceLoading(true);
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/class-teacher/students/${className}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/class-teacher/students/${className}`);
       setStudents(response.data);
       
       // Fetch weekly tables
@@ -543,7 +543,7 @@ const StaffProfile = () => {
   // Fetch weekly attendance tables
   const fetchWeeklyTables = async (className) => {
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/class-teacher/weekly-tables/${className}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/class-teacher/weekly-tables/${className}`);
       setWeeklyTables(response.data);
       
       // Auto-select current week if exists, otherwise latest
@@ -565,7 +565,7 @@ const StaffProfile = () => {
   const fetchWeeklyAttendance = async (className, weekStart) => {
     if (!className || !weekStart) return;
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/class-teacher/weekly-attendance/${className}/${weekStart}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/class-teacher/weekly-attendance/${className}/${weekStart}`);
       setWeeklyAttendanceExists(response.data.exists);
       
       if (response.data.exists && response.data.data.length > 0) {
@@ -648,7 +648,7 @@ const StaffProfile = () => {
     
     setCreatingAttendance(true);
     try {
-      await axios.post('https://excellence.oddag.et/api/class-teacher/create-weekly-attendance', {
+      await axios.post('https://school-management-system-daul.onrender.com/api/class-teacher/create-weekly-attendance', {
         className: assignedClass,
         weekStart: mondayOfWeek,
         globalStaffId: profile.global_staff_id
@@ -695,7 +695,7 @@ const StaffProfile = () => {
           };
         });
       
-      await axios.put(`https://excellence.oddag.et/api/class-teacher/weekly-attendance/${assignedClass}/${selectedWeek}`, {
+      await axios.put(`https://school-management-system-daul.onrender.com/api/class-teacher/weekly-attendance/${assignedClass}/${selectedWeek}`, {
         records,
         globalStaffId: profile.global_staff_id
       });
@@ -712,7 +712,7 @@ const StaffProfile = () => {
     if (!staffId) return;
     setEvaluationsLoading(true);
     try {
-      const response = await fetch(`https://excellence.oddag.et/api/evaluations/staff-evaluations/${staffId}`);
+      const response = await fetch(`https://school-management-system-daul.onrender.com/api/evaluations/staff-evaluations/${staffId}`);
       if (response.ok) {
         const data = await response.json();
         setEvaluations(data);
@@ -730,7 +730,7 @@ const StaffProfile = () => {
     setFormLoading(true);
     setFormError('');
     try {
-      const response = await fetch(`https://excellence.oddag.et/api/evaluations/${evaluationId}/form`);
+      const response = await fetch(`https://school-management-system-daul.onrender.com/api/evaluations/${evaluationId}/form`);
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || 'Failed to fetch evaluation form');
@@ -772,7 +772,7 @@ const StaffProfile = () => {
     setReportError('');
     setEvaluationView('report'); // Set view immediately so back button is visible
     try {
-      const response = await fetch(`https://excellence.oddag.et/api/evaluations/${evaluationId}/form`);
+      const response = await fetch(`https://school-management-system-daul.onrender.com/api/evaluations/${evaluationId}/form`);
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || 'Failed to fetch evaluation report');
@@ -848,7 +848,7 @@ const StaffProfile = () => {
     });
     
     try {
-      const response = await fetch(`https://excellence.oddag.et/api/evaluations/${selectedEvaluationId}/responses`, {
+      const response = await fetch(`https://school-management-system-daul.onrender.com/api/evaluations/${selectedEvaluationId}/responses`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ responses: responsesPayload })
@@ -891,7 +891,7 @@ const StaffProfile = () => {
 
   const fetchProfilePosts = async (staffId) => {
     try {
-      const response = await axios.get(`https://excellence.oddag.et/api/posts/profile/staff/${staffId}`);
+      const response = await axios.get(`https://school-management-system-daul.onrender.com/api/posts/profile/staff/${staffId}`);
       setProfilePosts(response.data.map(post => ({ ...post, localLikes: post.likes || 0 })));
     } catch (error) {
       console.error('Error fetching profile posts:', error);
@@ -914,7 +914,7 @@ const StaffProfile = () => {
 
   const handleLike = async (postId) => {
     try {
-      await axios.put(`https://excellence.oddag.et/api/posts/${postId}/like`);
+      await axios.put(`https://school-management-system-daul.onrender.com/api/posts/${postId}/like`);
       setProfilePosts(prev =>
         prev.map(post =>
           post.id === postId ? { ...post, localLikes: (post.localLikes || 0) + 1 } : post
