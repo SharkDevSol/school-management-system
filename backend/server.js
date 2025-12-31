@@ -56,11 +56,22 @@ if (process.env.NODE_ENV === 'production' && process.env.HTTPS_ENABLED === 'true
 }
 const io = new Server(server, {
   cors: {
-    origin: [
-      'http://localhost:3000',
-      'http://localhost:5173',
-      process.env.FRONTEND_URL
-    ].filter(Boolean),
+    origin: (origin, callback) => {
+      const allowed = [
+        'http://localhost:3000',
+        'http://localhost:5173',
+        process.env.FRONTEND_URL
+      ].filter(Boolean);
+      
+      if (!origin || allowed.includes(origin)) {
+        return callback(null, true);
+      }
+      // Allow any Vercel preview URL for this project
+      if (origin.includes('school-management-system') && origin.includes('vercel.app')) {
+        return callback(null, true);
+      }
+      callback(new Error('Not allowed by CORS'));
+    },
     methods: ['GET', 'POST'],
     allowedHeaders: ['Authorization'],
     credentials: true
@@ -92,7 +103,7 @@ app.use(httpsRedirect);
 app.use(securityHeaders);
 
 // 3. CORS configuration
-// Allow both localhost (dev) and production URLs
+// Allow localhost (dev) and all Vercel preview URLs
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
@@ -105,7 +116,12 @@ app.use(cors({
     if (!origin) {
       return callback(null, true);
     }
+    // Allow exact matches
     if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    // Allow any Vercel preview URL for this project
+    if (origin.includes('school-management-system') && origin.includes('vercel.app')) {
       return callback(null, true);
     }
     callback(new Error('Not allowed by CORS'));
